@@ -1,7 +1,14 @@
 import React from 'react'
 
+import NavBar from './NavBar'
+
 const Header = () => {
-  return <div>Header & Nav Goes Here</div>
+  return (
+    <header>
+      <h1>Historical Landmarks of San Francisco</h1>
+      <NavBar />
+    </header>
+  )
 }
 
 export default Header
