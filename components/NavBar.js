@@ -12,7 +12,7 @@ const NavBar = () => {
           <Link href='/landmarks'>Landmarks</Link>
         </li>
         <li>
-          <Link href='/guide'>Sightseeing</Link>
+          <Link href='/sightseeing-guide'>Sightseeing</Link>
         </li>
         <li>
           <Link href='/maps'>Maps</Link>
