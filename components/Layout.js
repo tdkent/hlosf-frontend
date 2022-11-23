@@ -8,9 +8,9 @@ const Layout = ({ title, description, children }) => {
   return (
     <>
       <Head>
-        <title>{title}</title>
         <meta name='description' content={description} />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <title>{title}</title>
       </Head>
       <Header />
       <main>{children}</main>

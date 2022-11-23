@@ -2,6 +2,7 @@ import React from 'react'
 
 import Layout from '../../components/Layout'
 import SingleLandmark from '../../components/SingleLandmark'
+
 const SingleLandmarkPage = ({ data }) => {
   return (
     <Layout title={`${data.title} | No. ${data.number} | Historical Landmarks of San Francisco`}>

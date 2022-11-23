@@ -1,8 +1,7 @@
-const { landmarks } = require('./data.json')
+const { landmarks_data } = require('./data/hlsfdata.json')
 
 export default function handler(req, res) {
-  const data = landmarks.filter((landmark) => landmark.slug === req.query.slug)
-  console.log(data)
+  const data = landmarks_data.filter((landmark) => landmark.slug === req.query.slug)
   if (req.method === 'GET') res.status(200).json(data[0])
   else {
     res.setHeader('Allow', ['GET'])
