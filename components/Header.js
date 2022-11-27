@@ -4,8 +4,8 @@ import NavBar from './NavBar'
 
 const Header = () => {
   return (
-    <header>
-      <h1>Historical Landmarks of San Francisco</h1>
+    <header className='flex flex-row items-center'>
+      <h1 className='text-3xl'>HLSF</h1>
       <NavBar />
     </header>
   )

@@ -5,7 +5,7 @@ import SiteIntro from '../components/content/SiteIntro'
 export default function HomePage() {
   return (
     <Layout title='Home Page | San Francisco Historical Landmarks'>
-      <article>
+      <article className='my-8'>
         <SiteNote />
         <SiteIntro />
       </article>

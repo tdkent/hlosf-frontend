@@ -4,18 +4,15 @@ import Link from 'next/link'
 const NavBar = () => {
   return (
     <nav>
-      <ul>
-        <li>
+      <ul className='flex flex-row'>
+        <li className='px-4'>
           <Link href='/'>Home</Link>
         </li>
-        <li>
+        <li className='px-4'>
           <Link href='/landmarks'>Landmarks</Link>
         </li>
-        <li>
-          <Link href='/sightseeing-guide'>Sightseeing</Link>
-        </li>
-        <li>
-          <Link href='/maps'>Maps</Link>
+        <li className='px-4'>
+          <Link href='/guide'>Guide</Link>
         </li>
       </ul>
     </nav>
