@@ -10,6 +10,10 @@
   }
 }
 
+.header-text {
+  filter: drop-shadow(0.125rem 0.125rem 0.125rem black);
+}
+
 #map {
   height: 400px;
 }

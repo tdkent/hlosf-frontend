@@ -9,7 +9,7 @@ const SiteNote = () => {
     setShowNote((prev) => !prev)
   }
   return (
-    <aside className={showNote && 'mb-4'}>
+    <aside className={showNote ? 'mb-4' : undefined}>
       <div className='flex flex-row items-center ml-1 mb-3'>
         {!showNote ? <BiCaretRight /> : <BiCaretDown />}
         <input type='button' onClick={handleClick} value='A note on the content' />

@@ -24,7 +24,7 @@ const SiteIntro = () => {
         the California Historical Society, the Society of California Pioneers, the Daughters of the American Revolution, etc., while other sites remain
         unmarked.
       </p>
-      <div className='flex flex-row items-center mt-2'>
+      <div className='flex flex-row items-center mt-4'>
         <FaArrowCircleRight className='mr-1' />
         <Link href='/landmarks' legacyBehavior>
           <a className='font-medium'>Go To Landmarks Page</a>

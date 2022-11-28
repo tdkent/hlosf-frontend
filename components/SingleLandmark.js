@@ -1,66 +1,41 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
+import { FaLandmark } from 'react-icons/fa'
+import { GrMapLocation } from 'react-icons/gr'
 
+import SingleMarkerDesc from './SingleMarkerDesc'
+import SingleLandmarkUpdate from './SingleLandmarkUpdate'
 import SingleLandmarkImages from './SingleLandmarkImages'
+import SingleLandmarkMarker from './SingleLandmarkMarker'
 import SingleLandmarkMap from './SingleLandmarkMap'
+import styles from '../styles/SingleLandmark.module.css'
 
 const SingleLandmark = ({ data }) => {
-  console.log('data: ', data)
-  const createDescMarkup = () => {
-    return { __html: data.description_html }
-  }
-  const createUpdateMarkup = () => {
-    if (data.update_html) {
-      return { __html: data.update_html }
-    }
-  }
-  const createMarkerMarkup = () => {
-    return { __html: data.marker_inscription_html }
-  }
-  return (
-    <article>
-      <h2>{data.title}</h2>
-      <h3>
-        Landmark No. {data.number} {data.dedication_year && `| Marker dedicated ${data.dedication_year}`}
-      </h3>
-      {/* <Image src={data.image_urls[0]} alt={data.title} width={600} height={400} /> */}
-      <div dangerouslySetInnerHTML={createDescMarkup()} />
-      {data.update_html && (
-        <div>
-          <h5>Update (2020)</h5>
-          <div dangerouslySetInnerHTML={createUpdateMarkup()} />
-        </div>
-      )}
-      <div>
-        <h5>Marker Inscription</h5>
-        <div dangerouslySetInnerHTML={createMarkerMarkup()} />
-        {data.marker_onsite === 'FALSE' && (
-          <p>
-            Note: there is currently no state marker on the site. The inscription has been taken from the{' '}
-            <Link href='https://ohp.parks.ca.gov/' target='_blank'>
-              Office of Historic Preservation, CA State Parks
-            </Link>{' '}
-            website.
-          </p>
-        )}
-      </div>
+  const handleClick = (e) => {}
 
-      <div>
-        <h5>Location of Historical Marker</h5>
-        <p>Address: {data.marker_address}</p>
-        <p>
-          Coordinates: {data.marker_coordinates_lat}, {data.marker_coordinates_lng}
-        </p>
-        <p>
-          Sightseeing Group: {data.group} <Link href='/guide'>View group map</Link>
-        </p>
-        <h5>Map</h5>
-        <div>
-          <SingleLandmarkMap coordsLat={data.marker_coordinates_lat} coordsLng={data.marker_coordinates_lng} />
-        </div>
+  return (
+    <article className='my-8 mx-2'>
+      <div className='flex items-center justify-center'>
+        <FaLandmark className='mr-2 fill-sky-500' />
+        <h4 className='text-sky-500'>{data.number}</h4>
       </div>
-      <SingleLandmarkImages imgUrls={data.imgUrls} />
+      <h2 className='mt-1 mb-4 px-2 text-2xl text-center'>{data.title}</h2>
+      <div className='my-2 mx-auto py-2 border-y text-center'>
+        <ul className='font-light text-sm'>
+          <li className='my-1 italic'>Group {data.group}</li>
+          <li className='my-1'>{data.marker_address}</li>
+          <li className='flex items-center justify-center my-1 text-base'>
+            <GrMapLocation className='mr-1' />
+            View on map
+          </li>
+        </ul>
+      </div>
+      <div className='pl-3 pr-5 font-light'>
+        <SingleMarkerDesc descText={data.description_html} />
+        {data.update_html && <SingleLandmarkUpdate updateText={data.update_html} />}
+        <SingleLandmarkMarker markerText={data.marker_inscription_html} markerOnSite={data.marker_onsite} markerYear={data.dedication_year} />
+        <SingleLandmarkImages imgUrls={data.imgUrls} title={data.title} handleClick={handleClick} />
+      </div>
     </article>
   )
 }
