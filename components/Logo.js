@@ -5,9 +5,9 @@ import { cloudinaryUrl, cloudinaryFolder } from '../config/config'
 
 const Logo = () => {
   return (
-    <div className='flex flex-col items-center py-8 bg-gradient-to-r from-blue-600 via-gray-800 to-blue-900'>
-      <h1 className='header-text z-10 font-serif text-center text-2xl text-white'>
-        Historic Landmarks <span className='italic'>of</span> <span className='text-sky-300'>San Francisco</span>
+    <div className='flex flex-col items-center py-8 bg-gradient-to-r from-blue-700 via-blue-900 to-gray-800'>
+      <h1 className='header-text z-10 font-serif text-center text-2xl text-white select-none'>
+        Historic Landmarks <span className='italic'>of</span> <span className='text-blue-300'>San Francisco</span>
       </h1>
       <Image
         className='h-20 w-20 absolute top-2 rounded-full z-5 shadow shadow-black'

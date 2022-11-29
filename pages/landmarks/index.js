@@ -1,10 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { FaLandmark } from 'react-icons/fa'
 
 import Layout from '../../components/Layout'
-import { cloudinaryFolder, cloudinaryUrl } from '../../config/config'
 
 const LandmarksPage = ({ data }) => {
   return (
@@ -27,7 +25,7 @@ const LandmarksPage = ({ data }) => {
               </div>
               <div className='ml-3 mr-1'>
                 <Link href={`/landmarks/${lm.slug}`} legacyBehavior>
-                  <a className='border rounded-xl py-1 px-2 font-light hover:bg-slate-200 active:text-white active:bg-slate-400 active:border-slate-400'>
+                  <a className='border rounded-xl py-1 px-2 font-light hover:bg-slate-200 active:text-white active:bg-slate-400 active:border-slate-400 select-none'>
                     View
                   </a>
                 </Link>

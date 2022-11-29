@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 
 import Header from './Header'
+import NavBar from './NavBar'
 import Footer from './Footer'
 
 const Layout = ({ title, description, children }) => {
@@ -12,8 +13,13 @@ const Layout = ({ title, description, children }) => {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <title>{title}</title>
       </Head>
+      <div id='backdrop-hook'></div>
+      <div id='modal-hook'></div>
       <Header />
-      <main>{children}</main>
+      <NavBar />
+      <div className='main-container'>
+        <main>{children}</main>
+      </div>
       <Footer />
     </>
   )

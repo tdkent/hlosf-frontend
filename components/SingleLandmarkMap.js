@@ -1,24 +1,37 @@
 import React, { useEffect, useRef } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
 
-const SingleLandmarkMap = ({ coordsLat, coordsLng }) => {
+import styles from '../styles/SingleLandmarkMap.module.css'
+
+const SingleLandmarkMap = ({ data }) => {
+  const { marker_coordinates_lat, marker_coordinates_lng, title, number } = data
   const googlemap = useRef()
   useEffect(() => {
     const loader = new Loader({
       apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY,
       version: 'weekly',
     })
-    const center = { lat: coordsLat, lng: coordsLng }
+    const center = { lat: marker_coordinates_lat, lng: marker_coordinates_lng }
     let map
     loader.load().then(() => {
       map = new google.maps.Map(googlemap.current, {
         center,
-        zoom: 16,
+        zoom: 18,
       })
-      new window.google.maps.Marker({ position: center, map: map })
+      const infoWindow = new google.maps.InfoWindow({
+        content: `Landmark #${number}: ${title}`,
+        ariaLabel: title,
+      })
+      const marker = new google.maps.Marker({ position: center, map, title })
+      marker.addListener('click', () => {
+        infoWindow.open({
+          anchor: marker,
+          map,
+        })
+      })
     })
-  })
-  return <div id='map' ref={googlemap} />
+  }, [marker_coordinates_lat, marker_coordinates_lng, title, number])
+  return <div className={`${styles.map}`} ref={googlemap} />
 }
 
 export default SingleLandmarkMap

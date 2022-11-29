@@ -7,7 +7,6 @@ const Header = () => {
   return (
     <header className='w-full'>
       <Logo />
-      <NavBar />
     </header>
   )
 }

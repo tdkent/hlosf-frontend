@@ -14,8 +14,8 @@
   filter: drop-shadow(0.125rem 0.125rem 0.125rem black);
 }
 
-#map {
-  height: 400px;
+.main-container {
+  min-height: calc(100vh - 16rem);
 }
 
 @media (prefers-color-scheme: dark) {
