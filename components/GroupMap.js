@@ -1,30 +1,52 @@
-import React, { useEffect, useRef } from 'react'
-import { Loader } from '@googlemaps/js-api-loader'
+import React, { useEffect, useRef } from "react"
+import { Loader } from "@googlemaps/js-api-loader"
 
-const GroupMap = ({ num, data, zoom, lat, lng }) => {
-  console.log('zoom: ', zoom)
+import styles from "../styles/GroupMap.module.css"
+
+const GroupMap = (props) => {
   const googlemap = useRef()
   useEffect(() => {
     const loader = new Loader({
       apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY,
-      version: 'weekly',
+      version: "weekly",
     })
-    const center = { lat, lng }
     let map
     loader.load().then(() => {
-      map = new google.maps.Map(googlemap.current, {
-        center,
-        zoom,
-      })
-      for (const lm of data) {
-        if (lm.group === num) {
-          const markerPos = { lat: lm.marker_coordinates_lat, lng: lm.marker_coordinates_lng }
-          new window.google.maps.Marker({ position: markerPos, map: map })
+      map = new google.maps.Map(googlemap.current)
+      let markersArr = []
+      props.data.forEach((lm) => {
+        if (lm.group === props.num) {
+          const infoWindow = new google.maps.InfoWindow({
+            content: `<div style="padding:0 3px 6px 3px"><p>${lm.title_short}</p><p style="padding: 4px 0">Number: ${lm.number}, Group: ${lm.group}</p><p>Address: ${lm.marker_address}</div>`,
+            ariaLabel: lm.title,
+          })
+          const position = {
+            lat: lm.marker_coordinates_lat,
+            lng: lm.marker_coordinates_lng,
+          }
+          const marker = new google.maps.Marker({
+            position,
+            map,
+            title: lm.title,
+            label: lm.group.toString(),
+          })
+          markersArr.push(marker)
+          marker.addListener("click", () => {
+            infoWindow.open({
+              anchor: marker,
+              map,
+            })
+          })
         }
-      }
+      })
+      const bounds = new google.maps.LatLngBounds()
+      markersArr.forEach((marker) => {
+        bounds.extend(marker.position)
+        map.fitBounds(bounds)
+      })
     })
   })
-  return <div id='map' ref={googlemap} />
+  return <div className={styles.map} ref={googlemap} />
 }
 
 export default GroupMap

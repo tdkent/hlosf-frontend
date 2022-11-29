@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import SiteNote from '../components/content/SiteNote'
 import SiteIntro from '../components/content/SiteIntro'
-import SiteImage from '../components/SiteImage'
+import SiteImage from '../components/content/SiteImage'
 
 export default function HomePage() {
   return (
