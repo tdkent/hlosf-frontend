@@ -1,31 +1,38 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { FaLandmark } from 'react-icons/fa'
-import { GrMapLocation } from 'react-icons/gr'
+import React, { useState } from "react"
+import Link from "next/link"
+import { FaLandmark } from "react-icons/fa"
+import { GrMapLocation } from "react-icons/gr"
 
-import MapModal from './ui/MapModal'
+import MapModal from "./ui/MapModal"
+import Hyperlink from "./Hyperlink"
 
 const SingleLandmarkInfo = ({ data }) => {
   const [map, setMap] = useState(false)
-  const handleClick = () => setMap(true)
+  const handleClick = (e) => {
+    e.preventDefault()
+    setMap(true)
+  }
 
   return (
     <>
       {map && <MapModal data={data} setMap={setMap} />}
-      <div className='flex items-center justify-center'>
-        <FaLandmark className='mr-2 fill-blue-500' />
-        <h4 className='text-blue-500'>{data.number}</h4>
+      <div className="flex items-center justify-center">
+        <FaLandmark className="mr-2 fill-sky-400" />
+        <h4 className="text-sky-400">{data.number}</h4>
       </div>
-      <h2 className='mt-1 mb-4 px-2 text-2xl text-center'>{data.title}</h2>
-      <div className='my-2 mx-auto py-2 border-y text-center'>
-        <ul className='font-light text-sm'>
-          <li className='my-1 italic'>Group {data.group}</li>
-          <li className='my-1'>{data.marker_address}</li>
-          <li className='flex items-center justify-center my-1 text-base'>
-            <GrMapLocation className='mr-1' />
-            <Link href='#' legacyBehavior>
+      <h2 className="mt-1 mb-4 px-2 text-2xl text-center">{data.title}</h2>
+      <div className="my-2 mx-auto py-2 border-y text-center">
+        <ul className="font-light text-sm">
+          <li className="my-1 italic">Group {data.group}</li>
+          <li className="my-1">{data.marker_address}</li>
+          <li className="flex items-center justify-center my-1 text-base">
+            <GrMapLocation className="mr-1" />
+            {/* <Link href="#" legacyBehavior>
               <a onClick={handleClick}>View on map</a>
-            </Link>
+            </Link> */}
+            <Hyperlink href="#" fontWeight={"medium"} handleClick={handleClick}>
+              View Map
+            </Hyperlink>
           </li>
         </ul>
       </div>

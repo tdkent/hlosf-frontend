@@ -4,7 +4,6 @@ import { Loader } from "@googlemaps/js-api-loader"
 import styles from "../styles/MasterMap.module.css"
 
 const MasterMap = ({ data }) => {
-  console.log("data: ", data[0])
   const googlemap = useRef()
   useEffect(() => {
     const loader = new Loader({

@@ -5,15 +5,16 @@ import Backdrop from "./Backdrop"
 import SingleLandmarkMap from "../SingleLandmarkMap"
 import GroupMap from "../GroupMap"
 import { FaWindowClose } from "react-icons/fa"
-import { GrMapLocation } from "react-icons/gr"
 
 const MapModalContent = (props) => {
   const content = (
     <div className="fixed top-16 w-full bg-white z-50 rounded-lg">
       <div className="py-1">
         <h4 className="flex items-center justify-center">
-          <GrMapLocation className="mr-2" />
-          {props.data.title || `Map: Group ${props.num}`}
+          Map:{" "}
+          {!props.data.length
+            ? `${props.data.title_short} (${props.data.number})`
+            : `Group ${props.num}`}
         </h4>
       </div>
       {!props.data.length ? (

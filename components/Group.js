@@ -3,6 +3,7 @@ import Link from "next/link"
 import { GrMapLocation } from "react-icons/gr"
 
 import MapModal from "./ui/MapModal"
+import Hyperlink from "./Hyperlink"
 
 const Group = (props) => {
   const [map, setMap] = useState(false)
@@ -22,17 +23,16 @@ const Group = (props) => {
               .sort((a, b) => a.group_order - b.group_order)
               .map((lm) => (
                 <li key={lm.id} className="my-2 text-sm">
-                  <Link href={`/landmarks/${lm.slug}`}>
+                  <Hyperlink href={`/landmarks/${lm.slug}`} fontWeight="light">
                     {lm.number}: {lm.title_short}
-                  </Link>
+                  </Hyperlink>
                 </li>
               ))}
           </ol>
           <p className="pt-1 flex items-center">
-            <GrMapLocation className="mr-1" />
-            <Link href="#" legacyBehavior>
-              <a onClick={handleClick}>View Group {props.num} Map</a>
-            </Link>
+            <Hyperlink href="#" fontWeight="medium" handleClick={handleClick}>
+              View Group {props.num} Map
+            </Hyperlink>
           </p>
         </div>
       </div>

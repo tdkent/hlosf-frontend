@@ -2,21 +2,23 @@ import React from "react"
 import Link from "next/link"
 import { FaArrowCircleRight } from "react-icons/fa"
 
+import Hyperlink from "../Hyperlink"
+
 const SiteIntro = () => {
   return (
-    <div className="pl-3 pr-5">
+    <div className="pl-3 pr-5 font-light">
       <h2 className="text-2xl font-medium">Welcome</h2>
-      <p className="text-lg font-light mt-2">
+      <p className="text-lg mt-2">
         For San Francisco 1976 is a twin bicentennial, the anniversary of the
         founding of both the Nation and the City.
       </p>
-      <p className="font-light mt-2">
+      <p className="mt-2">
         It seems therefore particularly appropriate for residents and visitors
         alike to become more aware of the City&apos;s past. One way of reaching
         this goal is by visiting the 38 California State Registered Historical
         Landmarks to be found within San Francisco.
       </p>
-      <p className="font-light mt-2">
+      <p className="mt-2">
         Anyone who has traveled in California has seen the handsome bronze
         plaques which designate State Historical Landmarks. These tablets are
         placed at sites of <q>statewide historical significance</q> which have{" "}
@@ -31,7 +33,7 @@ const SiteIntro = () => {
         landmark status or not. There are well over 800 such landmarks
         throughout the state, with new ones being added each year.
       </p>
-      <p className="font-light mt-2">
+      <p className="mt-2">
         Not all sites have official state plaques. Some have tablets provided by
         private organizations, e.g. the Native Sons of Daughters of the Golden
         West, the California Historical Society, the Society of California
@@ -40,9 +42,10 @@ const SiteIntro = () => {
       </p>
       <div className="flex flex-row items-center mt-4">
         <FaArrowCircleRight className="mr-1" />
-        <Link href="/landmarks" legacyBehavior>
-          <a className="font-medium">Go To Landmarks Page</a>
-        </Link>
+        <Hyperlink href={"/landmarks"}>Go To Landmarks Page</Hyperlink>
+        {/* <Link href="/landmarks" legacyBehavior>
+          <a className="font-semibold shadow-none hover:">Go To Landmarks Page</a>
+        </Link> */}
       </div>
     </div>
   )
