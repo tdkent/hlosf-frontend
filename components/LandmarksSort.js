@@ -10,11 +10,10 @@ const LandmarksSort = ({ setSortMethod }) => {
         <label htmlFor="sort">Sort by:</label>
         <select
           id="sort"
+          defaultValue={"number"}
           className="form-select ml-2 rounded-full"
           onChange={handleSelectChange}>
-          <option value="number" selected>
-            Number
-          </option>
+          <option value="number">Number</option>
           <option value="title_short">Name</option>
           <option value="group">Group</option>
         </select>

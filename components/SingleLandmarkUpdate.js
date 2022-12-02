@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-import styles from '../styles/SingleLandmark.module.css'
+import styles from "../styles/SingleLandmark.module.css"
 
 const SingleLandmarkUpdate = ({ updateText }) => {
   const createUpdateMarkup = () => {
@@ -10,8 +10,11 @@ const SingleLandmarkUpdate = ({ updateText }) => {
   }
   return (
     <>
-      <h3 className='mb-2 text-lg font-medium'>Update (2020)</h3>
-      <div className='mb-4' dangerouslySetInnerHTML={createUpdateMarkup()} />
+      <h3 className="mb-2 text-lg font-medium">Update (2020)</h3>
+      <div
+        className={styles.desc}
+        dangerouslySetInnerHTML={createUpdateMarkup()}
+      />
     </>
   )
 }

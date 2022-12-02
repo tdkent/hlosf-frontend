@@ -5,7 +5,7 @@ import LandmarksList from "../../components/LandmarksList"
 import LandmarksSort from "../../components/LandmarksSort"
 
 const LandmarksPage = ({ data }) => {
-  const [sortMethod, setSortMethod] = useState(null)
+  const [sortMethod, setSortMethod] = useState("number")
   const [sortedData, setSortedData] = useState([])
   useEffect(() => {
     const sortArray = (method) => {
