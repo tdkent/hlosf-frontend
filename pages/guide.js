@@ -1,8 +1,8 @@
 import React from "react"
 
-import Layout from "../components/Layout"
-import Group from "../components/Group"
-import MasterMap from "../components/MasterMap"
+import Layout from "../components/layout/Layout"
+import Group from "../components/guide/Group"
+import MasterMap from "../components/guide/MasterMap"
 
 const Guide = (props) => {
   return (

@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 
-import Hyperlink from "./Hyperlink"
+import Hyperlink from "../ui/Hyperlink"
 
 const NavBar = () => {
   return (

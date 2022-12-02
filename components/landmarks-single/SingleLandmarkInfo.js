@@ -3,8 +3,8 @@ import Link from "next/link"
 import { FaLandmark } from "react-icons/fa"
 import { GrMapLocation } from "react-icons/gr"
 
-import MapModal from "./ui/MapModal"
-import Hyperlink from "./Hyperlink"
+import MapModal from "../ui/MapModal"
+import Hyperlink from "../ui/Hyperlink"
 
 const SingleLandmarkInfo = ({ data }) => {
   const [map, setMap] = useState(false)

@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { GrMapLocation } from "react-icons/gr"
 
-import MapModal from "./ui/MapModal"
-import Hyperlink from "./Hyperlink"
+import MapModal from "../ui/MapModal"
+import Hyperlink from "../ui/Hyperlink"
 
 const Group = (props) => {
   const [map, setMap] = useState(false)

@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react"
 
-import Layout from '../../components/Layout'
-import SingleLandmark from '../../components/SingleLandmark'
+import Layout from "../../components/layout/Layout"
+import SingleLandmark from "../../components/landmarks-single/SingleLandmark"
 
 const SingleLandmarkPage = ({ data }) => {
   return (
-    <Layout title={`${data.title} | No. ${data.number} | Historical Landmarks of San Francisco`}>
+    <Layout
+      title={`${data.title} | No. ${data.number} | Historical Landmarks of San Francisco`}>
       <SingleLandmark data={data} />
     </Layout>
   )
@@ -24,7 +25,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(paths) {
-  const response = await fetch(`http://localhost:3000/api/landmarks/${paths.params.slug}`)
+  const response = await fetch(
+    `http://localhost:3000/api/landmarks/${paths.params.slug}`
+  )
   const data = await response.json()
   return { props: { data } }
 }

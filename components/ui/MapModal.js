@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import { FaWindowClose } from "react-icons/fa"
 
 import Backdrop from "./Backdrop"
-import SingleLandmarkMap from "../SingleLandmarkMap"
-import GroupMap from "../GroupMap"
-import { FaWindowClose } from "react-icons/fa"
+import SingleLandmarkMap from "../landmarks-single/SingleLandmarkMap"
+import GroupMap from "../guide/GroupMap"
 
 const MapModalContent = (props) => {
   const content = (

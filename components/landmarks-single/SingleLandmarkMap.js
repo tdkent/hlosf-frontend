@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react'
-import { Loader } from '@googlemaps/js-api-loader'
+import React, { useEffect, useRef } from "react"
+import { Loader } from "@googlemaps/js-api-loader"
 
-import styles from '../styles/SingleLandmarkMap.module.css'
+import styles from "../../styles/SingleLandmarkMap.module.css"
 
 const SingleLandmarkMap = ({ data }) => {
   const { marker_coordinates_lat, marker_coordinates_lng, title, number } = data
@@ -9,7 +9,7 @@ const SingleLandmarkMap = ({ data }) => {
   useEffect(() => {
     const loader = new Loader({
       apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY,
-      version: 'weekly',
+      version: "weekly",
     })
     const center = { lat: marker_coordinates_lat, lng: marker_coordinates_lng }
     let map
@@ -23,7 +23,7 @@ const SingleLandmarkMap = ({ data }) => {
         ariaLabel: title,
       })
       const marker = new google.maps.Marker({ position: center, map, title })
-      marker.addListener('click', () => {
+      marker.addListener("click", () => {
         infoWindow.open({
           anchor: marker,
           map,

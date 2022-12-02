@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import { Loader } from "@googlemaps/js-api-loader"
 
-import styles from "../styles/MasterMap.module.css"
+import styles from "../../styles/MasterMap.module.css"
 
 const MasterMap = ({ data }) => {
   const googlemap = useRef()

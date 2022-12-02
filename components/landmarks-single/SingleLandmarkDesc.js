@@ -1,6 +1,6 @@
 import React from "react"
 
-import styles from "../styles/SingleLandmark.module.css"
+import styles from "../../styles/SingleLandmark.module.css"
 
 const SingleLandmarkDesc = ({ descText }) => {
   const createDescMarkup = () => {

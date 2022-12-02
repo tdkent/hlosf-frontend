@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 
-import Layout from "../../components/Layout"
-import LandmarksList from "../../components/LandmarksList"
-import LandmarksSort from "../../components/LandmarksSort"
+import Layout from "../../components/layout/Layout"
+import LandmarksList from "../../components/landmarks-list/LandmarksList"
+import LandmarksSort from "../../components/landmarks-list/LandmarksSort"
 
 const LandmarksPage = ({ data }) => {
   const [sortMethod, setSortMethod] = useState("number")

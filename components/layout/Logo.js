@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 
-import { cloudinaryUrl, cloudinaryFolder } from "../config/config"
+import { cloudinaryUrl, cloudinaryFolder } from "../../config/config"
 
 const Logo = () => {
   return (
