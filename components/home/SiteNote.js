@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { BiCaretRight, BiCaretDown } from "react-icons/bi"
 import { FaWindowClose } from "react-icons/fa"
+import CloseButton from "../ui/CloseButton"
 
 const SiteNote = () => {
   const [showNote, setShowNote] = useState(false)
@@ -37,12 +38,7 @@ const SiteNote = () => {
           </p>
           <p className="font-light mt-2">Enjoy!</p>
           <p className="font-normal mt-2">Douglas Kent</p>
-          <div
-            className="flex flex-row items-center justify-center pt-2"
-            onClick={handleClick}>
-            <FaWindowClose className="mr-1 fill-red-700" />
-            <p className="text-red-700">Close</p>
-          </div>
+          <CloseButton closeClickHandler={handleClick} />
         </div>
       )}
     </aside>
