@@ -6,7 +6,7 @@ import Hyperlink from "../ui/Hyperlink"
 
 const SiteIntro = () => {
   return (
-    <div className="pl-3 pr-5 font-light">
+    <div className="pl-3 pr-5 xl:pl-16 xl:pr-20 font-light">
       <h2 className="text-2xl font-medium">Welcome</h2>
       <p className="text-lg mt-2">
         For San Francisco 1976 is a twin bicentennial, the anniversary of the
@@ -40,12 +40,9 @@ const SiteIntro = () => {
         Pioneers, the Daughters of the American Revolution, etc., while other
         sites remain unmarked.
       </p>
-      <div className="flex flex-row items-center mt-4">
+      <div className="flex flex-row items-center mt-4 text-lg">
         <FaArrowCircleRight className="mr-1" />
         <Hyperlink href={"/landmarks"}>Go To Landmarks Page</Hyperlink>
-        {/* <Link href="/landmarks" legacyBehavior>
-          <a className="font-semibold shadow-none hover:">Go To Landmarks Page</a>
-        </Link> */}
       </div>
     </div>
   )

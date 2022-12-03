@@ -8,7 +8,7 @@ import GroupMap from "../guide/GroupMap"
 
 const MapModalContent = (props) => {
   const content = (
-    <div className="fixed top-16 w-full bg-white z-50 rounded-lg">
+    <div className="fixed top-16 md:top-20 w-full xl:w-4/5 xl:left-[10%] bg-white z-50 rounded-lg">
       <div className="py-1">
         <h4 className="flex items-center justify-center">
           Map:{" "}

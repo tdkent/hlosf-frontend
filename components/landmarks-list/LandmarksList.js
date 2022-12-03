@@ -1,8 +1,16 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import { FaLandmark } from "react-icons/fa"
 
 const LandmarksList = ({ sortedData }) => {
+  const [windowWidth, setWindowWidth] = useState(null)
+  useEffect(() => {
+    const getWindowSize = () => {
+      const { innerWidth } = window
+      setWindowWidth(innerWidth)
+    }
+    getWindowSize()
+  }, [])
   return (
     <div className="grid grid-cols-1 mt-4 mx-2">
       {sortedData.map((lm) => {
@@ -10,9 +18,11 @@ const LandmarksList = ({ sortedData }) => {
           <div
             key={lm.id}
             className="flex flex-row items-center justify-between py-2 border-b first:border-t last:border-none">
-            <div>
-              <h4 className="text-sm mb-1">{lm.title_short}</h4>
-              <div className="font-light text-sm my-1">
+            <div className="md:ml-4 xl:ml-0">
+              <h4 className="text-sm md:text-base mb-1">
+                {windowWidth > 320 ? lm.title_short : lm.title_stub}
+              </h4>
+              <div className="font-light text-sm md:text-base my-1">
                 <ul className="flex flex-row items-center">
                   <li className="px-1 py-0.5 flex flex-row items-center">
                     <FaLandmark className="mr-1.5 fill-slate-500 " />
@@ -22,7 +32,7 @@ const LandmarksList = ({ sortedData }) => {
                 </ul>
               </div>
             </div>
-            <div className="ml-3 mr-1">
+            <div className="ml-3 mr-1 md:mr-4 xl:mr-0">
               <Link href={`/landmarks/${lm.slug}`} legacyBehavior>
                 <a
                   className="
@@ -39,7 +49,8 @@ const LandmarksList = ({ sortedData }) => {
                 hover:text-white
                 active:transition-none
                 active:bg-slate-400 
-                active:border-slate-400 
+                active:border-slate-400
+                md:text-lg 
                 ">
                   View
                 </a>
