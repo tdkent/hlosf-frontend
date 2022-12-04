@@ -4,7 +4,15 @@ import { Loader } from "@googlemaps/js-api-loader"
 import styles from "../../styles/SingleLandmarkMap.module.css"
 
 const SingleLandmarkMap = ({ data }) => {
-  const { marker_coordinates_lat, marker_coordinates_lng, title, number } = data
+  const {
+    marker_coordinates_lat,
+    marker_coordinates_lng,
+    marker_address,
+    title,
+    title_short,
+    number,
+    group,
+  } = data
   const googlemap = useRef()
   useEffect(() => {
     const loader = new Loader({
@@ -19,7 +27,7 @@ const SingleLandmarkMap = ({ data }) => {
         zoom: 18,
       })
       const infoWindow = new google.maps.InfoWindow({
-        content: `Landmark #${number}: ${title}`,
+        content: `<div style="padding:0 3px 6px 3px"><p>${title_short}</p><p style="padding: 4px 0">Number: ${number}, Group: ${group}</p><p>Address: ${marker_address}</div>`,
         ariaLabel: title,
       })
       const marker = new google.maps.Marker({ position: center, map, title })
@@ -30,7 +38,15 @@ const SingleLandmarkMap = ({ data }) => {
         })
       })
     })
-  }, [marker_coordinates_lat, marker_coordinates_lng, title, number])
+  }, [
+    marker_coordinates_lat,
+    marker_coordinates_lng,
+    marker_address,
+    title,
+    title_short,
+    number,
+    group,
+  ])
   return <div className={`${styles.map}`} ref={googlemap} />
 }
 

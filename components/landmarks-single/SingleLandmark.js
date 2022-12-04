@@ -10,7 +10,6 @@ import SingleLandmarkImages from "./SingleLandmarkImages"
 import SingleLandmarkMarker from "./SingleLandmarkMarker"
 
 const SingleLandmark = ({ data }) => {
-  console.log("data: ", data)
   return (
     <article className="my-8 mx-2">
       <SingleLandmarkInfo data={data} />

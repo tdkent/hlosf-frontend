@@ -20,7 +20,11 @@ const LandmarksList = ({ sortedData }) => {
             className="flex flex-row items-center justify-between py-2 border-b first:border-t last:border-none">
             <div className="md:ml-4 xl:ml-0">
               <h4 className="text-sm md:text-base mb-1">
-                {windowWidth > 320 ? lm.title_short : lm.title_stub}
+                {windowWidth <= 320
+                  ? lm.title_stub
+                  : windowWidth >= 1280
+                  ? lm.title
+                  : lm.title_short}
               </h4>
               <div className="font-light text-sm md:text-base my-1">
                 <ul className="flex flex-row items-center">

@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout/Layout"
 import Group from "../components/guide/Group"
 import MasterMap from "../components/guide/MasterMap"
+import { host } from "../config/config"
 
 const Guide = (props) => {
   return (
@@ -47,7 +48,7 @@ const Guide = (props) => {
 export default Guide
 
 export async function getServerSideProps() {
-  const response = await fetch("http://localhost:3000/api/landmarks")
+  const response = await fetch(`${host}/api/guide`)
   const data = await response.json()
   return { props: { data } }
 }

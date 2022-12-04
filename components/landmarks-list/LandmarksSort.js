@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
-const LandmarksSort = ({ setSortMethod }) => {
+const LandmarksSort = ({ sortMethod, setSortMethod }) => {
   const handleSelectChange = ({ target }) => {
+    localStorage.setItem("lmSortMethod", target.value)
     setSortMethod(target.value)
   }
   return (
@@ -10,7 +11,7 @@ const LandmarksSort = ({ setSortMethod }) => {
         <label htmlFor="sort">Sort by:</label>
         <select
           id="sort"
-          defaultValue={"number"}
+          value={sortMethod || "number"}
           className="form-select ml-2 rounded-full"
           onChange={handleSelectChange}>
           <option value="number">Number</option>

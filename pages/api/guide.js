@@ -1,4 +1,4 @@
-const { landmarks_data } = require("./data/hlsfdata.json")
+const { landmarks_data } = require("./landmarks/data/hlsfdata.json")
 
 export default function handler(req, res) {
   if (req.method === "GET") {
@@ -11,7 +11,11 @@ export default function handler(req, res) {
         title_stub: lm.title_stub,
         number: lm.number,
         group: lm.group,
+        group_order: lm.group_order,
         slug: lm.slug,
+        marker_coordinates_lat: lm.marker_coordinates_lat,
+        marker_coordinates_lng: lm.marker_coordinates_lng,
+        marker_address: lm.marker_address,
       }
       data.push(lmData)
     })

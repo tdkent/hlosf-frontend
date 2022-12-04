@@ -7,7 +7,7 @@ import SiteImage from "../components/home/SiteImage"
 
 export default function HomePage() {
   return (
-    <Layout title="Home Page | San Francisco Historical Landmarks">
+    <Layout title="Home Page | Historical Landmarks of San Francisco">
       <article className="my-8">
         <SiteImage />
         <SiteNote />

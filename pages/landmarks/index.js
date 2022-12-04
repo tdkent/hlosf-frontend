@@ -3,10 +3,16 @@ import React, { useState, useEffect } from "react"
 import Layout from "../../components/layout/Layout"
 import LandmarksList from "../../components/landmarks-list/LandmarksList"
 import LandmarksSort from "../../components/landmarks-list/LandmarksSort"
+import { host } from "../../config/config"
 
 const LandmarksPage = ({ data }) => {
-  const [sortMethod, setSortMethod] = useState("number")
+  const [sortMethod, setSortMethod] = useState(null)
   const [sortedData, setSortedData] = useState([])
+  useEffect(() => {
+    const sort = localStorage.getItem("lmSortMethod")
+    if (!sort) setSortMethod("number")
+    else setSortMethod(sort)
+  }, [])
   useEffect(() => {
     const sortArray = (method) => {
       let sorted = []
@@ -22,15 +28,15 @@ const LandmarksPage = ({ data }) => {
     sortArray(sortMethod)
   }, [sortMethod])
   return (
-    <Layout title="All Landmarks">
-      <LandmarksSort setSortMethod={setSortMethod} />
+    <Layout title="Landmarks Index | Historical Landmarks of San Francisco">
+      <LandmarksSort sortMethod={sortMethod} setSortMethod={setSortMethod} />
       <LandmarksList sortedData={sortedData} />
     </Layout>
   )
 }
 
 export async function getServerSideProps() {
-  const response = await fetch("http://localhost:3000/api/landmarks")
+  const response = await fetch(`${host}/api/landmarks`)
   const data = await response.json()
   return { props: { data } }
 }
