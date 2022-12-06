@@ -7,3 +7,9 @@
     height: 500px;
   }
 }
+
+@media screen and (max-height: 600px) {
+  .map {
+    height: 300px;
+  }
+}

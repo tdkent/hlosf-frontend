@@ -17,7 +17,7 @@ const GroupMap = (props) => {
       props.data.forEach((lm) => {
         if (lm.group === props.num) {
           const infoWindow = new google.maps.InfoWindow({
-            content: `<div style="padding:0 3px 6px 3px"><p>${lm.title_short}</p><p style="padding: 4px 0">Number: ${lm.number}, Group: ${lm.group}</p><p>Address: ${lm.marker_address}</div>`,
+            content: `<div style="padding:0 3px 6px 3px"><p>${lm.title}</p><p style="padding: 4px 0">Number: ${lm.number}, Group: ${lm.group}</p><p>Address: ${lm.marker_address}</div>`,
             ariaLabel: lm.title,
           })
           const position = {

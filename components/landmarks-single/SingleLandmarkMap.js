@@ -27,7 +27,7 @@ const SingleLandmarkMap = ({ data }) => {
         zoom: 18,
       })
       const infoWindow = new google.maps.InfoWindow({
-        content: `<div style="padding:0 3px 6px 3px"><p>${title_short}</p><p style="padding: 4px 0">Number: ${number}, Group: ${group}</p><p>Address: ${marker_address}</div>`,
+        content: `<div style="padding:0 3px 6px 3px"><p>${title}</p><p style="padding: 4px 0">Number: ${number}, Group: ${group}</p><p>Address: ${marker_address}</div>`,
         ariaLabel: title,
       })
       const marker = new google.maps.Marker({ position: center, map, title })

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 
 import Layout from "../components/layout/Layout"
 import Group from "../components/guide/Group"
@@ -6,6 +6,14 @@ import MasterMap from "../components/guide/MasterMap"
 import { host } from "../config/config"
 
 const Guide = (props) => {
+  const [windowWidth = { windowWidth }, setWindowWidth] = useState(null)
+  useEffect(() => {
+    const getWindowSize = () => {
+      const { innerWidth } = window
+      setWindowWidth(innerWidth)
+    }
+    getWindowSize()
+  }, [])
   return (
     <Layout title="Sightseeing Guide | Historical Landmarks of San Francisco">
       <div className="my-4 font-light">
@@ -34,11 +42,11 @@ const Guide = (props) => {
             For your convenience, the landmarks have been placed in five
             geographical groups with a suggested sequence for seeing the sites.
           </p>
-          <Group num={1} {...props} />
-          <Group num={2} {...props} />
-          <Group num={3} {...props} />
-          <Group num={4} {...props} />
-          <Group num={5} {...props} />
+          <Group num={1} {...props} windowWidth={windowWidth} />
+          <Group num={2} {...props} windowWidth={windowWidth} />
+          <Group num={3} {...props} windowWidth={windowWidth} />
+          <Group num={4} {...props} windowWidth={windowWidth} />
+          <Group num={5} {...props} windowWidth={windowWidth} />
         </div>
       </div>
     </Layout>

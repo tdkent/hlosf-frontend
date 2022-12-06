@@ -1,6 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { FaWindowClose } from "react-icons/fa"
 
 import Backdrop from "./Backdrop"
 import SingleLandmarkMap from "../landmarks-single/SingleLandmarkMap"
@@ -9,12 +8,18 @@ import CloseButton from "./CloseButton"
 
 const MapModalContent = (props) => {
   const content = (
-    <div className="fixed top-16 md:top-20 w-full xl:w-4/5 xl:left-[10%] 2xl:w-1/2 2xl:left-[25%] 2xl:top-32 bg-white z-50 rounded-lg">
+    <div
+      id="modal"
+      aria-modal="true"
+      aria-labelledby="landmark-name"
+      className="fixed top-4 min-[375px]:top-16 md:top-20 w-full xl:w-4/5 xl:left-[10%] 2xl:w-1/2 2xl:left-[25%] 2xl:top-32 bg-white z-50 rounded-lg">
       <div className="py-1">
-        <h4 className="flex items-center justify-center">
+        <h4
+          id="landmark-name"
+          className="px-2 flex items-center justify-center">
           Map:{" "}
           {!props.data.length
-            ? `${props.data.title_short} (${props.data.number})`
+            ? `${props.data.title_stub} (${props.data.number})`
             : `Group ${props.num}`}
         </h4>
       </div>
@@ -23,7 +28,10 @@ const MapModalContent = (props) => {
       ) : (
         <GroupMap {...props} />
       )}
-      <CloseButton closeClickHandler={() => props.setMap(false)} />
+      <CloseButton
+        controls={"modal"}
+        closeClickHandler={() => props.setMap(false)}
+      />
     </div>
   )
   return ReactDOM.createPortal(content, document.getElementById("modal-hook"))

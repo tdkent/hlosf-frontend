@@ -1,6 +1,4 @@
 import React, { useState } from "react"
-import Link from "next/link"
-import { GrMapLocation } from "react-icons/gr"
 
 import MapModal from "../ui/MapModal"
 import Hyperlink from "../ui/Hyperlink"
@@ -24,7 +22,12 @@ const Group = (props) => {
               .map((lm) => (
                 <li key={lm.id} className="my-2 text-sm md:text-base">
                   <Hyperlink href={`/landmarks/${lm.slug}`} fontWeight="light">
-                    {lm.number}: {lm.title_short}
+                    {lm.number}:{" "}
+                    {props.windowWidth <= 320
+                      ? lm.title_stub
+                      : props.windowWidth >= 1280
+                      ? lm.title
+                      : lm.title_short}
                   </Hyperlink>
                 </li>
               ))}

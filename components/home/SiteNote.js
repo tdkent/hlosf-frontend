@@ -17,10 +17,14 @@ const SiteNote = () => {
           type="button"
           onClick={handleClick}
           value="A note on the content"
+          aria-controls="content-note"
+          aria-expanded={showNote}
         />
       </div>
       {showNote && (
-        <div className="m-2 xl:my-2 xl:mx-16 pl-3 pr-6 pb-3 bg-slate-50 border rounded-lg">
+        <div
+          id="content-note"
+          className="m-2 xl:my-2 xl:mx-16 pl-3 pr-6 pb-3 bg-slate-50 border rounded-lg">
           <p className="font-light mt-2">
             Much of the content on this site was created in 1976, and the text
             herein often refers to that year. This material was intended to be
@@ -38,7 +42,10 @@ const SiteNote = () => {
           </p>
           <p className="font-light mt-2">Enjoy!</p>
           <p className="font-normal mt-2">Douglas Kent</p>
-          <CloseButton closeClickHandler={handleClick} />
+          <CloseButton
+            controls="content-note"
+            closeClickHandler={handleClick}
+          />
         </div>
       )}
     </aside>

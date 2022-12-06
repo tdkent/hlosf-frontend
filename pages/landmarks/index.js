@@ -8,6 +8,14 @@ import { host } from "../../config/config"
 const LandmarksPage = ({ data }) => {
   const [sortMethod, setSortMethod] = useState(null)
   const [sortedData, setSortedData] = useState([])
+  const [windowWidth, setWindowWidth] = useState(null)
+  useEffect(() => {
+    const getWindowSize = () => {
+      const { innerWidth } = window
+      setWindowWidth(innerWidth)
+    }
+    getWindowSize()
+  }, [])
   useEffect(() => {
     const sort = localStorage.getItem("lmSortMethod")
     if (!sort) setSortMethod("number")
@@ -19,9 +27,17 @@ const LandmarksPage = ({ data }) => {
       if (method === "number" || method === "group") {
         sorted = [...data].sort((a, b) => a[method] - b[method])
       } else {
-        sorted = [...data].sort((a, b) =>
-          a.title_short.localeCompare(b.title_short)
-        )
+        if (windowWidth <= 320) {
+          sorted = [...data].sort((a, b) =>
+            a.title_stub.localeCompare(b.title_stub)
+          )
+        } else if (windowWidth >= 1280) {
+          sorted = [...data].sort((a, b) => a.title.localeCompare(b.title))
+        } else {
+          sorted = [...data].sort((a, b) =>
+            a.title_short.localeCompare(b.title_short)
+          )
+        }
       }
       setSortedData(sorted)
     }
@@ -30,7 +46,7 @@ const LandmarksPage = ({ data }) => {
   return (
     <Layout title="Landmarks Index | Historical Landmarks of San Francisco">
       <LandmarksSort sortMethod={sortMethod} setSortMethod={setSortMethod} />
-      <LandmarksList sortedData={sortedData} />
+      <LandmarksList sortedData={sortedData} windowWidth={windowWidth} />
     </Layout>
   )
 }

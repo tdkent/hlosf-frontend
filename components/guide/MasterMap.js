@@ -16,8 +16,8 @@ const MasterMap = ({ data }) => {
       let markersArr = []
       data.forEach((lm) => {
         const infoWindow = new google.maps.InfoWindow({
-          content: `<div style="padding:0 3px 6px 3px"><p>${lm.title_short}</p><p style="padding: 4px 0">Number: ${lm.number}, Group: ${lm.group}</p><p>Address: ${lm.marker_address}</div>`,
-          ariaLabel: lm.title_short,
+          content: `<div style="padding:0 3px 6px 3px"><p>${lm.title}</p><p style="padding: 4px 0">Number: ${lm.number}, Group: ${lm.group}</p><p>Address: ${lm.marker_address}</div>`,
+          ariaLabel: lm.title,
         })
         const position = {
           lat: lm.marker_coordinates_lat,

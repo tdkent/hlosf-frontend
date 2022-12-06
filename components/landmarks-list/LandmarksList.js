@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Link from "next/link"
 import { FaLandmark } from "react-icons/fa"
 
-const LandmarksList = ({ sortedData }) => {
-  const [windowWidth, setWindowWidth] = useState(null)
-  useEffect(() => {
-    const getWindowSize = () => {
-      const { innerWidth } = window
-      setWindowWidth(innerWidth)
-    }
-    getWindowSize()
-  }, [])
+const LandmarksList = ({ sortedData, windowWidth }) => {
   return (
     <div className="grid grid-cols-1 mt-4 mx-2">
       {sortedData.map((lm) => {

@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "hero-pattern":
-          "url('https://res.cloudinary.com/do28aglgy/image/upload/v1670053300/hlsf/us-mint-logo_bhj3ef.jpg')",
+          "url('https://res.cloudinary.com/do28aglgy/image/upload/v1670286082/hlsf/us-mint-logo_qig2cs.jpg')",
       },
     },
     fontFamily: {
