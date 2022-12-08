@@ -12,6 +12,7 @@
     "@googlemaps/js-api-loader": "^1.15.1",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
+    "isomorphic-dompurify": "^0.24.0",
     "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",

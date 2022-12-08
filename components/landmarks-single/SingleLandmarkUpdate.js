@@ -3,10 +3,9 @@ import React from "react"
 import styles from "../../styles/SingleLandmark.module.css"
 
 const SingleLandmarkUpdate = ({ updateText }) => {
+  const clean = DOMPurify.sanitize(updateText)
   const createUpdateMarkup = () => {
-    if (updateText) {
-      return { __html: updateText }
-    }
+    return { __html: clean }
   }
   return (
     <>

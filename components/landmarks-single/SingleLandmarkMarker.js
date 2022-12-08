@@ -3,8 +3,9 @@ import React from "react"
 import styles from "../../styles/SingleLandmark.module.css"
 
 const SingleLandmarkMarker = ({ markerText, markerOnSite, markerYear }) => {
+  const clean = DOMPurify.sanitize(markerText)
   const createMarkerMarkup = () => {
-    return { __html: markerText }
+    return { __html: clean }
   }
   return (
     <>
