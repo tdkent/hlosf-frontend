@@ -56,7 +56,7 @@ const Guide = (props) => {
 export default Guide
 
 export async function getServerSideProps() {
-  const response = await fetch(`${host}/api/guide`)
+  const response = await fetch(`${host}/guide`)
   const data = await response.json()
   return { props: { data } }
 }

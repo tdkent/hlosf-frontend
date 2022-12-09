@@ -52,7 +52,7 @@ const LandmarksPage = ({ data }) => {
 }
 
 export async function getServerSideProps() {
-  const response = await fetch(`${host}/api/landmarks`)
+  const response = await fetch(`${host}/landmarks`)
   const data = await response.json()
   return { props: { data } }
 }

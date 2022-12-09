@@ -14,20 +14,26 @@ const SingleLandmarkPage = ({ data }) => {
   )
 }
 
-export async function getStaticPaths() {
-  const response = await fetch(`${host}/api/landmarks`)
-  const data = await response.json()
-  const paths = data.map((landmark) => ({
-    params: { slug: landmark.slug },
-  }))
-  return {
-    paths,
-    fallback: false,
-  }
-}
+// export async function getStaticPaths() {
+//   const response = await fetch(`${host}/landmarks`)
+//   const data = await response.json()
+//   const paths = data.map((landmark) => ({
+//     params: { slug: landmark.slug },
+//   }))
+//   return {
+//     paths,
+//     fallback: false,
+//   }
+// }
 
-export async function getStaticProps(paths) {
-  const response = await fetch(`${host}/api/landmarks/${paths.params.slug}`)
+// export async function getStaticProps(paths) {
+//   const response = await fetch(`${host}/landmarks/${paths.params.slug}`)
+//   const data = await response.json()
+//   return { props: { data } }
+// }
+
+export async function getServerSideProps({ query: { slug } }) {
+  const response = await fetch(`${host}/landmarks/${slug}`)
   const data = await response.json()
   return { props: { data } }
 }
