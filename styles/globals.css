@@ -17,13 +17,3 @@
 .main-container {
   min-height: calc(100vh - 16rem);
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
