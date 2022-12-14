@@ -19,6 +19,7 @@ const SiteNote = () => {
           value="A note on the content"
           aria-controls="content-note"
           aria-expanded={showNote}
+          className="hover:cursor-pointer"
         />
       </div>
       {showNote && (
