@@ -3,17 +3,12 @@ import { FaLandmark } from "react-icons/fa"
 
 import LandmarkLink from "./LandmarkLink"
 
-const LandmarksList = ({ sortedData, windowWidth, scrollId, setScrollId }) => {
+const LandmarksList = ({ sortedData, windowWidth, scrollId }) => {
   useEffect(() => {
-    const scrollToLandmark = () => {
-      if (scrollId) {
-        const element = document.getElementById(scrollId)
-        element.scrollIntoView({ behavior: "auto", block: "start" })
-        // sessionStorage.removeItem("scroll-position-id")
-      } else return
-    }
-    scrollToLandmark()
-    // setScrollId(null)
+    if (scrollId) {
+      const element = document.getElementById(scrollId)
+      element.scrollIntoView({ behavior: "auto", block: "start" })
+    } else return
   })
   return (
     <div className="grid grid-cols-1 mt-4 mx-2">

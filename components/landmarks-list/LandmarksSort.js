@@ -1,7 +1,9 @@
 import React from "react"
 
-const LandmarksSort = ({ sortMethod, setSortMethod }) => {
+const LandmarksSort = ({ sortMethod, setSortMethod, setScrollId }) => {
   const handleSelectChange = ({ target }) => {
+    sessionStorage.removeItem("scroll-position-id")
+    setScrollId(null)
     sessionStorage.setItem("lmSortMethod", target.value)
     setSortMethod(target.value)
   }

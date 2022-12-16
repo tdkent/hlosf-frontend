@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 
 import Layout from "../../components/layout/Layout"
 import LandmarksList from "../../components/landmarks-list/LandmarksList"
@@ -50,7 +50,11 @@ const LandmarksPage = ({ data }) => {
   }, [])
   return (
     <Layout title="Landmarks Index | Historical Landmarks of San Francisco">
-      <LandmarksSort sortMethod={sortMethod} setSortMethod={setSortMethod} />
+      <LandmarksSort
+        sortMethod={sortMethod}
+        setSortMethod={setSortMethod}
+        setScrollId={setScrollId}
+      />
       <LandmarksList
         sortedData={sortedData}
         windowWidth={windowWidth}
