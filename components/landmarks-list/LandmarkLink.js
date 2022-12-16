@@ -3,8 +3,7 @@ import Link from "next/link"
 
 const LandmarkLink = ({ id, slug }) => {
   const selectHandler = () => {
-    const prevId = Number(id) - 1
-    sessionStorage.setItem("scroll-position-id", prevId)
+    sessionStorage.setItem("scroll-position-id", id)
   }
   return (
     <div className="ml-3 mr-1 md:mr-4 xl:mr-0">

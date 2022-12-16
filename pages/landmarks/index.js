@@ -18,7 +18,7 @@ const LandmarksPage = ({ data }) => {
     getWindowSize()
   }, [])
   useEffect(() => {
-    const sort = localStorage.getItem("lmSortMethod")
+    const sort = sessionStorage.getItem("lmSortMethod")
     if (!sort) setSortMethod("number")
     else setSortMethod(sort)
   }, [])
@@ -55,6 +55,7 @@ const LandmarksPage = ({ data }) => {
         sortedData={sortedData}
         windowWidth={windowWidth}
         scrollId={scrollId}
+        setScrollId={setScrollId}
       />
     </Layout>
   )

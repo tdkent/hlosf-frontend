@@ -2,11 +2,11 @@ import React from "react"
 
 const LandmarksSort = ({ sortMethod, setSortMethod }) => {
   const handleSelectChange = ({ target }) => {
-    localStorage.setItem("lmSortMethod", target.value)
+    sessionStorage.setItem("lmSortMethod", target.value)
     setSortMethod(target.value)
   }
   return (
-    <div className="mt-4 mb-2">
+    <div id="landmark-sort" className="mt-4 mb-2">
       <form className="flex items-center justify-center">
         <label htmlFor="sort">Sort by:</label>
         <select
