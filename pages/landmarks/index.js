@@ -9,6 +9,7 @@ const LandmarksPage = ({ data }) => {
   const [sortMethod, setSortMethod] = useState(null)
   const [sortedData, setSortedData] = useState([])
   const [windowWidth, setWindowWidth] = useState(null)
+  const [scrollId, setScrollId] = useState(null)
   useEffect(() => {
     const getWindowSize = () => {
       const { innerWidth } = window
@@ -43,10 +44,18 @@ const LandmarksPage = ({ data }) => {
     }
     sortArray(sortMethod)
   }, [sortMethod])
+  useEffect(() => {
+    const scrollPositionId = sessionStorage.getItem("scroll-position-id")
+    setScrollId(scrollPositionId)
+  }, [])
   return (
     <Layout title="Landmarks Index | Historical Landmarks of San Francisco">
       <LandmarksSort sortMethod={sortMethod} setSortMethod={setSortMethod} />
-      <LandmarksList sortedData={sortedData} windowWidth={windowWidth} />
+      <LandmarksList
+        sortedData={sortedData}
+        windowWidth={windowWidth}
+        scrollId={scrollId}
+      />
     </Layout>
   )
 }
