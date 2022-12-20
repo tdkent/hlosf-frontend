@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 
+import ScrollContext from "../context/ScrollContext"
 import Layout from "../components/layout/Layout"
 import Group from "../components/guide/Group"
 import MasterMap from "../components/guide/MasterMap"
 import { host } from "../config/config"
 
 const Guide = (props) => {
+  const { removeScrollMarker } = useContext(ScrollContext)
   const [windowWidth = { windowWidth }, setWindowWidth] = useState(null)
   useEffect(() => {
     const getWindowSize = () => {
@@ -13,6 +15,9 @@ const Guide = (props) => {
       setWindowWidth(innerWidth)
     }
     getWindowSize()
+  }, [])
+  useEffect(() => {
+    removeScrollMarker()
   }, [])
   return (
     <Layout title="Sightseeing Guide | Historical Landmarks of San Francisco">
