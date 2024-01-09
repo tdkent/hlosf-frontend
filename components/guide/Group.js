@@ -22,7 +22,7 @@ const Group = (props) => {
               .map((lm) => (
                 <li key={lm.id} className="my-2 text-sm md:text-base">
                   <Hyperlink href={`/landmarks/${lm.slug}`} fontWeight="light">
-                    {lm.number}:{" "}
+                  {lm.number.toString().includes('.') ? lm.number.toString().replace('.', '-') : lm.number}:{" "}
                     {props.windowWidth <= 320
                       ? lm.title_stub
                       : props.windowWidth >= 1280

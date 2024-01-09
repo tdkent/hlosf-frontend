@@ -30,7 +30,7 @@ const LandmarksList = ({ sortedData, windowWidth, scrollId }) => {
                 <ul className="flex flex-row items-center">
                   <li className="px-1 py-0.5 flex flex-row items-center">
                     <FaLandmark className="mr-1.5 fill-slate-500 " />
-                    {lm.number}
+                    {lm.number.toString().includes('.') ? lm.number.toString().replace('.', '-') : lm.number}
                   </li>
                   <li className="py-0.5 px-1 mx-4 italic">Group {lm.group}</li>
                 </ul>
