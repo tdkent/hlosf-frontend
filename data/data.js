@@ -11,3 +11,8 @@ export const allLandmarksReducedData = landmarkData.data.map((lm) => {
     slug: lm.slug,
   };
 });
+
+export const getSingleLandmark = (slug) => {
+  const landmark = landmarkData.data.filter((lm) => lm.slug === slug);
+  return landmark[0];
+};
