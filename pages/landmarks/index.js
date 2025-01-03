@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../components/layout/Layout";
 import LandmarksList from "../../components/landmarks-list/LandmarksList";
 import LandmarksSort from "../../components/landmarks-list/LandmarksSort";
-import landmarkData from "../../data/data.json";
+import { allLandmarksReducedData } from "../../data/data";
 
 const LandmarksPage = () => {
-  const data = landmarkData.data;
+  const data = allLandmarksReducedData;
   const [sortMethod, setSortMethod] = useState(null);
   const [sortedData, setSortedData] = useState([]);
   const [windowWidth, setWindowWidth] = useState(null);
