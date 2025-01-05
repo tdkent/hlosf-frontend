@@ -1,53 +1,54 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
-import Layout from "../../components/layout/Layout"
-import LandmarksList from "../../components/landmarks-list/LandmarksList"
-import LandmarksSort from "../../components/landmarks-list/LandmarksSort"
-import { host } from "../../config/config"
+import Layout from "../../components/layout/Layout";
+import LandmarksList from "../../components/landmarks-list/LandmarksList";
+import LandmarksSort from "../../components/landmarks-list/LandmarksSort";
+import { allLandmarksReducedData } from "../../data/data";
 
-const LandmarksPage = ({ data }) => {
-  const [sortMethod, setSortMethod] = useState(null)
-  const [sortedData, setSortedData] = useState([])
-  const [windowWidth, setWindowWidth] = useState(null)
-  const [scrollId, setScrollId] = useState(null)
+const LandmarksPage = () => {
+  const data = allLandmarksReducedData;
+  const [sortMethod, setSortMethod] = useState(null);
+  const [sortedData, setSortedData] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(null);
+  const [scrollId, setScrollId] = useState(null);
   useEffect(() => {
     const getWindowSize = () => {
-      const { innerWidth } = window
-      setWindowWidth(innerWidth)
-    }
-    getWindowSize()
-  }, [])
+      const { innerWidth } = window;
+      setWindowWidth(innerWidth);
+    };
+    getWindowSize();
+  }, []);
   useEffect(() => {
-    const sort = sessionStorage.getItem("lmSortMethod")
-    if (!sort) setSortMethod("number")
-    else setSortMethod(sort)
-  }, [])
+    const sort = sessionStorage.getItem("lmSortMethod");
+    if (!sort) setSortMethod("number");
+    else setSortMethod(sort);
+  }, []);
   useEffect(() => {
     const sortArray = (method) => {
-      let sorted = []
+      let sorted = [];
       if (method === "number" || method === "group") {
-        sorted = [...data].sort((a, b) => a[method] - b[method])
+        sorted = [...data].sort((a, b) => a[method] - b[method]);
       } else {
         if (windowWidth <= 320) {
           sorted = [...data].sort((a, b) =>
             a.title_stub.localeCompare(b.title_stub)
-          )
+          );
         } else if (windowWidth >= 1280) {
-          sorted = [...data].sort((a, b) => a.title.localeCompare(b.title))
+          sorted = [...data].sort((a, b) => a.title.localeCompare(b.title));
         } else {
           sorted = [...data].sort((a, b) =>
             a.title_short.localeCompare(b.title_short)
-          )
+          );
         }
       }
-      setSortedData(sorted)
-    }
-    sortArray(sortMethod)
-  }, [sortMethod])
+      setSortedData(sorted);
+    };
+    sortArray(sortMethod);
+  }, [sortMethod]);
   useEffect(() => {
-    const scrollPositionId = sessionStorage.getItem("scroll-position-id")
-    setScrollId(scrollPositionId)
-  }, [])
+    const scrollPositionId = sessionStorage.getItem("scroll-position-id");
+    setScrollId(scrollPositionId);
+  }, []);
   return (
     <Layout title="Landmarks Index | Historical Landmarks of San Francisco">
       <LandmarksSort
@@ -62,13 +63,7 @@ const LandmarksPage = ({ data }) => {
         setScrollId={setScrollId}
       />
     </Layout>
-  )
-}
+  );
+};
 
-export async function getServerSideProps() {
-  const response = await fetch(`${host}/landmarks`)
-  const data = await response.json()
-  return { props: { data } }
-}
-
-export default LandmarksPage
+export default LandmarksPage;

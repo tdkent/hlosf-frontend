@@ -1,24 +1,25 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext } from "react";
 
-import ScrollContext from "../context/ScrollContext"
-import Layout from "../components/layout/Layout"
-import Group from "../components/guide/Group"
-import MasterMap from "../components/guide/MasterMap"
-import { host } from "../config/config"
+import ScrollContext from "../context/ScrollContext";
+import Layout from "../components/layout/Layout";
+import Group from "../components/guide/Group";
+import MasterMap from "../components/guide/MasterMap";
+import { getAllGroups } from "../data/data";
 
-const Guide = (props) => {
-  const { removeScrollMarker } = useContext(ScrollContext)
-  const [windowWidth = { windowWidth }, setWindowWidth] = useState(null)
+const Guide = () => {
+  const groups = getAllGroups();
+  const { removeScrollMarker } = useContext(ScrollContext);
+  const [windowWidth = { windowWidth }, setWindowWidth] = useState(null);
   useEffect(() => {
     const getWindowSize = () => {
-      const { innerWidth } = window
-      setWindowWidth(innerWidth)
-    }
-    getWindowSize()
-  }, [])
+      const { innerWidth } = window;
+      setWindowWidth(innerWidth);
+    };
+    getWindowSize();
+  }, []);
   useEffect(() => {
-    removeScrollMarker()
-  }, [])
+    removeScrollMarker();
+  }, []);
   return (
     <Layout title="Sightseeing Guide | Historical Landmarks of San Francisco">
       <div className="my-4 font-light">
@@ -38,7 +39,7 @@ const Guide = (props) => {
             view name, group, and address information.
           </p>
           <div>
-            <MasterMap {...props} />
+            <MasterMap data={groups} />
           </div>
         </div>
         <div>
@@ -47,21 +48,15 @@ const Guide = (props) => {
             For your convenience, the landmarks have been placed in five
             geographical groups with a suggested sequence for seeing the sites.
           </p>
-          <Group num={1} {...props} windowWidth={windowWidth} />
-          <Group num={2} {...props} windowWidth={windowWidth} />
-          <Group num={3} {...props} windowWidth={windowWidth} />
-          <Group num={4} {...props} windowWidth={windowWidth} />
-          <Group num={5} {...props} windowWidth={windowWidth} />
+          <Group num={1} data={groups} windowWidth={windowWidth} />
+          <Group num={2} data={groups} windowWidth={windowWidth} />
+          <Group num={3} data={groups} windowWidth={windowWidth} />
+          <Group num={4} data={groups} windowWidth={windowWidth} />
+          <Group num={5} data={groups} windowWidth={windowWidth} />
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Guide
-
-export async function getServerSideProps() {
-  const response = await fetch(`${host}/guide`)
-  const data = await response.json()
-  return { props: { data } }
-}
+export default Guide;
