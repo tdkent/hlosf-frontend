@@ -1,15 +1,28 @@
-import React from "react";
-import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Layout from "../../components/layout/Layout";
 import SingleLandmark from "../../components/landmarks-single/SingleLandmark";
 import { getSingleLandmark } from "../../data/data";
 
 const SingleLandmarkPage = () => {
-  const { slug } = useParams();
-  const data = getSingleLandmark(slug);
+  const router = useRouter();
+  const slug = router.query.slug;
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const landmarkData = getSingleLandmark(slug);
+    setData(landmarkData);
+  }, [slug]);
+
+  if (!data) {
+    return <p>Loading...</p>;
+  }
+
   if (data.number.toString().includes(".")) {
     data.number = data.number.toString().replace(".", "-");
   }
+
   return (
     <Layout
       title={`${data.title} | No. ${data.number} | Historical Landmarks of San Francisco`}
@@ -19,9 +32,5 @@ const SingleLandmarkPage = () => {
     </Layout>
   );
 };
-
-export async function getServerSideProps({ query: { slug } }) {
-  return { props: { slug } };
-}
 
 export default SingleLandmarkPage;
