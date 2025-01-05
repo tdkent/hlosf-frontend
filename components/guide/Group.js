@@ -1,14 +1,14 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import MapModal from "../ui/MapModal"
-import Hyperlink from "../ui/Hyperlink"
+import MapModal from "../ui/MapModal";
+import Hyperlink from "../ui/Hyperlink";
 
 const Group = (props) => {
-  const [map, setMap] = useState(false)
+  const [map, setMap] = useState(false);
   const handleClick = (e) => {
-    e.preventDefault()
-    setMap(true)
-  }
+    e.preventDefault();
+    setMap(true);
+  };
   return (
     <>
       {map && <MapModal {...props} setMap={setMap} />}
@@ -22,7 +22,10 @@ const Group = (props) => {
               .map((lm) => (
                 <li key={lm.id} className="my-2 text-sm md:text-base">
                   <Hyperlink href={`/landmarks/${lm.slug}`} fontWeight="light">
-                  {lm.number.toString().includes('.') ? lm.number.toString().replace('.', '-') : lm.number}:{" "}
+                    {lm.number.toString().includes(".")
+                      ? lm.number.toString().replace(".", "-")
+                      : lm.number}
+                    :{" "}
                     {props.windowWidth <= 320
                       ? lm.title_stub
                       : props.windowWidth >= 1280
@@ -40,7 +43,7 @@ const Group = (props) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Group
+export default Group;

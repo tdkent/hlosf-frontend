@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "next/navigation";
 import Layout from "../../components/layout/Layout";
 import SingleLandmark from "../../components/landmarks-single/SingleLandmark";
-import { host } from "../../config/config";
 import { getSingleLandmark } from "../../data/data";
 
 const SingleLandmarkPage = () => {
