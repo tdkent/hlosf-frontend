@@ -12,7 +12,7 @@ const SiteImage = () => {
         alt="The Conservatory of Flowers, San Francisco"
         height={660}
         width={990}
-        priority={true}
+        priority
       />
     </div>
   );
