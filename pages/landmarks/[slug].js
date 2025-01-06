@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { getSingleLandmark } from '../../data/data';
 import Layout from '../../components/layout/Layout';
 import SingleLandmark from '../../components/landmarks-single/SingleLandmark';
-import { getSingleLandmark } from '../../data/data';
+import Loading from '../../components/ui/Loading';
 
 const SingleLandmarkPage = () => {
   const router = useRouter();
@@ -16,7 +17,7 @@ const SingleLandmarkPage = () => {
   }, [slug]);
 
   if (!data) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (data.number.toString().includes('.')) {
