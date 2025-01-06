@@ -23,6 +23,8 @@
 }
 
 .desc a:active {
-  text-decoration: underline, 0.25rem #38bdf8;
+  text-decoration:
+    underline,
+    0.25rem #38bdf8;
   color: #38bdf8;
 }

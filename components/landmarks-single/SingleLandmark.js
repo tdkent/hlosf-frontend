@@ -1,13 +1,13 @@
-import React from "react"
-import Link from "next/link"
-import { FaLandmark } from "react-icons/fa"
-import { GrMapLocation } from "react-icons/gr"
+import React from 'react';
+import Link from 'next/link';
+import { FaLandmark } from 'react-icons/fa';
+import { GrMapLocation } from 'react-icons/gr';
 
-import SingleLandmarkInfo from "./SingleLandmarkInfo"
-import SingleLandmarkDesc from "./SingleLandmarkDesc"
-import SingleLandmarkUpdate from "./SingleLandmarkUpdate"
-import SingleLandmarkImages from "./SingleLandmarkImages"
-import SingleLandmarkMarker from "./SingleLandmarkMarker"
+import SingleLandmarkInfo from './SingleLandmarkInfo';
+import SingleLandmarkDesc from './SingleLandmarkDesc';
+import SingleLandmarkUpdate from './SingleLandmarkUpdate';
+import SingleLandmarkImages from './SingleLandmarkImages';
+import SingleLandmarkMarker from './SingleLandmarkMarker';
 
 const SingleLandmark = ({ data }) => {
   return (
@@ -32,6 +32,6 @@ const SingleLandmark = ({ data }) => {
         ) : null}
       </div>
     </article>
-  )
-}
-export default SingleLandmark
+  );
+};
+export default SingleLandmark;

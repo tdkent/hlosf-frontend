@@ -1,10 +1,10 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Backdrop from "./Backdrop"
-import SingleLandmarkMap from "../landmarks-single/SingleLandmarkMap"
-import GroupMap from "../guide/GroupMap"
-import CloseButton from "./CloseButton"
+import Backdrop from './Backdrop';
+import SingleLandmarkMap from '../landmarks-single/SingleLandmarkMap';
+import GroupMap from '../guide/GroupMap';
+import CloseButton from './CloseButton';
 
 const MapModalContent = (props) => {
   const content = (
@@ -17,7 +17,7 @@ const MapModalContent = (props) => {
         <h4
           id="landmark-name"
           className="px-2 flex items-center justify-center">
-          Map:{" "}
+          Map:{' '}
           {!props.data.length
             ? `${props.data.title_stub} (${props.data.number})`
             : `Group ${props.num}`}
@@ -29,13 +29,13 @@ const MapModalContent = (props) => {
         <GroupMap {...props} />
       )}
       <CloseButton
-        controls={"modal"}
+        controls={'modal'}
         closeClickHandler={() => props.setMap(false)}
       />
     </div>
-  )
-  return ReactDOM.createPortal(content, document.getElementById("modal-hook"))
-}
+  );
+  return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
+};
 
 const MapModal = (props) => {
   return (
@@ -43,7 +43,7 @@ const MapModal = (props) => {
       <Backdrop setMap={props.setMap} />
       <MapModalContent {...props} />
     </>
-  )
-}
+  );
+};
 
-export default MapModal
+export default MapModal;

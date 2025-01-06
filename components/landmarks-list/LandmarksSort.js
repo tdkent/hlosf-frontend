@@ -1,19 +1,21 @@
-import React from "react"
+import React from 'react';
 
 const LandmarksSort = ({ sortMethod, setSortMethod, setScrollId }) => {
   const handleSelectChange = ({ target }) => {
-    sessionStorage.removeItem("scroll-position-id")
-    setScrollId(null)
-    sessionStorage.setItem("lmSortMethod", target.value)
-    setSortMethod(target.value)
-  }
+    sessionStorage.removeItem('scroll-position-id');
+    setScrollId(null);
+    sessionStorage.setItem('lmSortMethod', target.value);
+    setSortMethod(target.value);
+  };
   return (
-    <div id="landmark-sort" className="mt-4 mb-2">
+    <div
+      id="landmark-sort"
+      className="mt-4 mb-2">
       <form className="flex items-center justify-center">
         <label htmlFor="sort">Sort by:</label>
         <select
           id="sort"
-          value={sortMethod || "number"}
+          value={sortMethod || 'number'}
           className="form-select ml-2 rounded-full"
           onChange={handleSelectChange}>
           <option value="number">Number</option>
@@ -22,7 +24,7 @@ const LandmarksSort = ({ sortMethod, setSortMethod, setScrollId }) => {
         </select>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default LandmarksSort
+export default LandmarksSort;

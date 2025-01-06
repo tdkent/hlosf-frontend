@@ -1,8 +1,8 @@
-import React from "react"
-import Link from "next/link"
-import { FaArrowCircleRight } from "react-icons/fa"
+import React from 'react';
+import Link from 'next/link';
+import { FaArrowCircleRight } from 'react-icons/fa';
 
-import Hyperlink from "../ui/Hyperlink"
+import Hyperlink from '../ui/Hyperlink';
 
 const SiteIntro = () => {
   return (
@@ -21,7 +21,7 @@ const SiteIntro = () => {
       <p className="mt-2">
         Anyone who has traveled in California has seen the handsome bronze
         plaques which designate State Historical Landmarks. These tablets are
-        placed at sites of <q>statewide historical significance</q> which have{" "}
+        placed at sites of <q>statewide historical significance</q> which have{' '}
         <q>
           anthropological, cultural, military, political, architectural,
           economic, scientific or technical, religious, experimental, or other
@@ -42,10 +42,10 @@ const SiteIntro = () => {
       </p>
       <div className="flex flex-row items-center mt-4 text-lg">
         <FaArrowCircleRight className="mr-1" />
-        <Hyperlink href={"/landmarks"}>Go To Landmarks Page</Hyperlink>
+        <Hyperlink href={'/landmarks'}>Go To Landmarks Page</Hyperlink>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SiteIntro
+export default SiteIntro;

@@ -1,12 +1,12 @@
-import React from "react"
+import React from 'react';
 
-import styles from "../../styles/SingleLandmark.module.css"
+import styles from '../../styles/SingleLandmark.module.css';
 
 const SingleLandmarkUpdate = ({ updateText }) => {
-  const clean = DOMPurify.sanitize(updateText)
+  const clean = DOMPurify.sanitize(updateText);
   const createUpdateMarkup = () => {
-    return { __html: clean }
-  }
+    return { __html: clean };
+  };
   return (
     <>
       <h3 className="mb-2 text-lg font-medium">Update (2020)</h3>
@@ -15,7 +15,7 @@ const SingleLandmarkUpdate = ({ updateText }) => {
         dangerouslySetInnerHTML={createUpdateMarkup()}
       />
     </>
-  )
-}
+  );
+};
 
-export default SingleLandmarkUpdate
+export default SingleLandmarkUpdate;

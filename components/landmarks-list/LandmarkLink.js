@@ -1,13 +1,15 @@
-import React from "react"
-import Link from "next/link"
+import React from 'react';
+import Link from 'next/link';
 
 const LandmarkLink = ({ id, slug }) => {
   const selectHandler = () => {
-    sessionStorage.setItem("scroll-position-id", id)
-  }
+    sessionStorage.setItem('scroll-position-id', id);
+  };
   return (
     <div className="ml-3 mr-1 md:mr-4 xl:mr-0">
-      <Link href={`/landmarks/${slug}`} legacyBehavior>
+      <Link
+        href={`/landmarks/${slug}`}
+        legacyBehavior>
         <a
           className="
       border 
@@ -31,7 +33,7 @@ const LandmarkLink = ({ id, slug }) => {
         </a>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default LandmarkLink
+export default LandmarkLink;

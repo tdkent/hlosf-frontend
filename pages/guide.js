@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from 'react';
 
-import ScrollContext from "../context/ScrollContext";
-import Layout from "../components/layout/Layout";
-import Group from "../components/guide/Group";
-import MasterMap from "../components/guide/MasterMap";
-import { getAllGroups } from "../data/data";
+import ScrollContext from '../context/ScrollContext';
+import Layout from '../components/layout/Layout';
+import Group from '../components/guide/Group';
+import MasterMap from '../components/guide/MasterMap';
+import { getAllGroups } from '../data/data';
 
 const Guide = () => {
   const groups = getAllGroups();
@@ -48,11 +48,31 @@ const Guide = () => {
             For your convenience, the landmarks have been placed in five
             geographical groups with a suggested sequence for seeing the sites.
           </p>
-          <Group num={1} data={groups} windowWidth={windowWidth} />
-          <Group num={2} data={groups} windowWidth={windowWidth} />
-          <Group num={3} data={groups} windowWidth={windowWidth} />
-          <Group num={4} data={groups} windowWidth={windowWidth} />
-          <Group num={5} data={groups} windowWidth={windowWidth} />
+          <Group
+            num={1}
+            data={groups}
+            windowWidth={windowWidth}
+          />
+          <Group
+            num={2}
+            data={groups}
+            windowWidth={windowWidth}
+          />
+          <Group
+            num={3}
+            data={groups}
+            windowWidth={windowWidth}
+          />
+          <Group
+            num={4}
+            data={groups}
+            windowWidth={windowWidth}
+          />
+          <Group
+            num={5}
+            data={groups}
+            windowWidth={windowWidth}
+          />
         </div>
       </div>
     </Layout>

@@ -1,5 +1,5 @@
-import React from "react"
-import Link from "next/link"
+import React from 'react';
+import Link from 'next/link';
 
 const ImageAttribution = ({ lmNum }) => {
   return (
@@ -7,7 +7,7 @@ const ImageAttribution = ({ lmNum }) => {
       {lmNum === 80 && (
         <div>
           <p className="text-xs italic">
-            Archival image:{" "}
+            Archival image:{' '}
             <Link
               href="https://opensfhistory.org/Display/wnp27.3780.jpg"
               prefetch={false}
@@ -25,7 +25,7 @@ const ImageAttribution = ({ lmNum }) => {
       {lmNum === 80 && (
         <div>
           <p className="text-xs italic">
-            Archival image:{" "}
+            Archival image:{' '}
             <Link
               href="https://opensfhistory.org/Display/wnp27.3780.jpg"
               prefetch={false}
@@ -43,7 +43,7 @@ const ImageAttribution = ({ lmNum }) => {
       {lmNum === 84 && (
         <div>
           <p className="text-xs italic">
-            Archival images:{" "}
+            Archival images:{' '}
             <Link
               href="https://sfpl.org/locations/main-library/historical-photographs"
               target="_blank"
@@ -62,7 +62,7 @@ const ImageAttribution = ({ lmNum }) => {
       {lmNum === 91 && (
         <div>
           <p className="text-xs italic">
-            Archival image:{" "}
+            Archival image:{' '}
             <Link
               href="https://opensfhistory.org/Display/wnp26.099.jpg"
               prefetch={false}
@@ -80,7 +80,7 @@ const ImageAttribution = ({ lmNum }) => {
       {(lmNum === 454 || lmNum === 650 || lmNum === 754) && (
         <div>
           <p className="text-xs italic">
-            Archival images:{" "}
+            Archival images:{' '}
             <Link
               href="https://commons.wikimedia.org/wiki/Main_Page"
               prefetch={false}
@@ -98,7 +98,7 @@ const ImageAttribution = ({ lmNum }) => {
       {lmNum === 964 && (
         <div>
           <p className="text-xs italic">
-            Archival image:{" "}
+            Archival image:{' '}
             <Link
               href="https://opensfhistory.org/Display/wnp70.0873.jpg"
               prefetch={false}
@@ -116,7 +116,7 @@ const ImageAttribution = ({ lmNum }) => {
       {lmNum === 974 && (
         <div>
           <p className="text-xs italic">
-            Archival image:{" "}
+            Archival image:{' '}
             <Link
               href="https://opensfhistory.org/Display/wnp14.10316.jpg"
               prefetch={false}
@@ -134,7 +134,7 @@ const ImageAttribution = ({ lmNum }) => {
       {lmNum === 987 && (
         <div>
           <p className="text-xs italic">
-            Archival image:{" "}
+            Archival image:{' '}
             <Link
               href="https://opensfhistory.org/Display/wnp14.10113.jpg"
               prefetch={false}
@@ -149,7 +149,7 @@ const ImageAttribution = ({ lmNum }) => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default ImageAttribution
+export default ImageAttribution;

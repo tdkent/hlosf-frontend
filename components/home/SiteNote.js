@@ -1,16 +1,16 @@
-import React, { useState } from "react"
-import { BiCaretRight, BiCaretDown } from "react-icons/bi"
-import { FaWindowClose } from "react-icons/fa"
-import CloseButton from "../ui/CloseButton"
+import React, { useState } from 'react';
+import { BiCaretRight, BiCaretDown } from 'react-icons/bi';
+import { FaWindowClose } from 'react-icons/fa';
+import CloseButton from '../ui/CloseButton';
 
 const SiteNote = () => {
-  const [showNote, setShowNote] = useState(false)
+  const [showNote, setShowNote] = useState(false);
   const handleClick = (e) => {
-    e.preventDefault()
-    setShowNote((prev) => !prev)
-  }
+    e.preventDefault();
+    setShowNote((prev) => !prev);
+  };
   return (
-    <aside className={showNote ? "mb-4" : undefined}>
+    <aside className={showNote ? 'mb-4' : undefined}>
       <div className="flex flex-row items-center ml-1 xl:ml-16 mb-3 mt-4 md:text-lg">
         {!showNote ? <BiCaretRight /> : <BiCaretDown />}
         <input
@@ -50,7 +50,7 @@ const SiteNote = () => {
         </div>
       )}
     </aside>
-  )
-}
+  );
+};
 
-export default SiteNote
+export default SiteNote;

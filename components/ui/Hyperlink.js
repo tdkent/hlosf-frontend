@@ -1,9 +1,11 @@
-import React from "react"
-import Link from "next/link"
+import React from 'react';
+import Link from 'next/link';
 
 const Hyperlink = ({ href, fontWeight, linkTrans, handleClick, children }) => {
   return (
-    <Link href={href} legacyBehavior>
+    <Link
+      href={href}
+      legacyBehavior>
       <a
         className={`
         font-${fontWeight || `semibold`}
@@ -21,7 +23,7 @@ const Hyperlink = ({ href, fontWeight, linkTrans, handleClick, children }) => {
         {children}
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default Hyperlink
+export default Hyperlink;

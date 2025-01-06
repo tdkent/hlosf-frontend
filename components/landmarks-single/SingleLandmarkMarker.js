@@ -1,12 +1,12 @@
-import React from "react"
+import React from 'react';
 
-import styles from "../../styles/SingleLandmark.module.css"
+import styles from '../../styles/SingleLandmark.module.css';
 
 const SingleLandmarkMarker = ({ markerText, markerOnSite, markerYear }) => {
-  const clean = DOMPurify.sanitize(markerText)
+  const clean = DOMPurify.sanitize(markerText);
   const createMarkerMarkup = () => {
-    return { __html: clean }
-  }
+    return { __html: clean };
+  };
   return (
     <>
       <h3 className="mb-2 text-lg font-medium">Plaque</h3>
@@ -15,7 +15,7 @@ const SingleLandmarkMarker = ({ markerText, markerOnSite, markerYear }) => {
         className="mb-4 italic"
         dangerouslySetInnerHTML={createMarkerMarkup()}
       />
-      {markerOnSite === "FALSE" && (
+      {markerOnSite === 'FALSE' && (
         <div className="mb-4 py-1 px-2 border rounded-lg bg-slate-100">
           <p className="my-2 font-normal text-sm">
             Note: there is presently no state marker on site. Inscription
@@ -30,7 +30,7 @@ const SingleLandmarkMarker = ({ markerText, markerOnSite, markerYear }) => {
         </>
       )}
     </>
-  )
-}
+  );
+};
 
-export default SingleLandmarkMarker
+export default SingleLandmarkMarker;
