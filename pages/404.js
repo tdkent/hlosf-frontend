@@ -1,13 +1,13 @@
-import React, { useEffect, useContext } from "react"
+import React, { useEffect, useContext } from 'react';
 
-import ScrollContext from "../context/ScrollContext"
-import Layout from "../components/layout/Layout"
+import ScrollContext from '../context/ScrollContext';
+import Layout from '../components/layout/Layout';
 
 const Custom404 = () => {
-  const { removeScrollMarker } = useContext(ScrollContext)
+  const { removeScrollMarker } = useContext(ScrollContext);
   useEffect(() => {
-    removeScrollMarker()
-  }, [])
+    removeScrollMarker();
+  }, []);
   return (
     <Layout title="404 Page Not Found | Historical Landmarks of San Francisco">
       <div className="text-center mt-6">
@@ -15,7 +15,7 @@ const Custom404 = () => {
         <p>This page doesn&#39;t exist.</p>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Custom404
+export default Custom404;

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import Layout from "../../components/layout/Layout";
-import LandmarksList from "../../components/landmarks-list/LandmarksList";
-import LandmarksSort from "../../components/landmarks-list/LandmarksSort";
-import { allLandmarksReducedData } from "../../data/data";
+import Layout from '../../components/layout/Layout';
+import LandmarksList from '../../components/landmarks-list/LandmarksList';
+import LandmarksSort from '../../components/landmarks-list/LandmarksSort';
+import { allLandmarksReducedData } from '../../data/data';
 
 const LandmarksPage = () => {
   const data = allLandmarksReducedData;
@@ -19,25 +19,25 @@ const LandmarksPage = () => {
     getWindowSize();
   }, []);
   useEffect(() => {
-    const sort = sessionStorage.getItem("lmSortMethod");
-    if (!sort) setSortMethod("number");
+    const sort = sessionStorage.getItem('lmSortMethod');
+    if (!sort) setSortMethod('number');
     else setSortMethod(sort);
   }, []);
   useEffect(() => {
     const sortArray = (method) => {
       let sorted = [];
-      if (method === "number" || method === "group") {
+      if (method === 'number' || method === 'group') {
         sorted = [...data].sort((a, b) => a[method] - b[method]);
       } else {
         if (windowWidth <= 320) {
           sorted = [...data].sort((a, b) =>
-            a.title_stub.localeCompare(b.title_stub)
+            a.title_stub.localeCompare(b.title_stub),
           );
         } else if (windowWidth >= 1280) {
           sorted = [...data].sort((a, b) => a.title.localeCompare(b.title));
         } else {
           sorted = [...data].sort((a, b) =>
-            a.title_short.localeCompare(b.title_short)
+            a.title_short.localeCompare(b.title_short),
           );
         }
       }
@@ -46,7 +46,7 @@ const LandmarksPage = () => {
     sortArray(sortMethod);
   }, [sortMethod]);
   useEffect(() => {
-    const scrollPositionId = sessionStorage.getItem("scroll-position-id");
+    const scrollPositionId = sessionStorage.getItem('scroll-position-id');
     setScrollId(scrollPositionId);
   }, []);
   return (

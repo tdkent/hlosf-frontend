@@ -1,7 +1,7 @@
-import React from "react"
-import Image from "next/image"
+import React from 'react';
+import Image from 'next/image';
 
-import { cloudinaryUrl, cloudinaryFolder } from "../../config/config"
+import { cloudinaryUrl, cloudinaryFolder } from '../../config/config';
 
 const SiteImage = () => {
   return (
@@ -15,7 +15,7 @@ const SiteImage = () => {
         priority={true}
       />
     </div>
-  )
-}
+  );
+};
 
-export default SiteImage
+export default SiteImage;

@@ -1,9 +1,11 @@
-import React from "react"
-import { FaWindowClose } from "react-icons/fa"
+import React from 'react';
+import { FaWindowClose } from 'react-icons/fa';
 
 const CloseButton = ({ closeClickHandler, controls }) => {
   return (
-    <div className="py-4" onClick={closeClickHandler}>
+    <div
+      className="py-4"
+      onClick={closeClickHandler}>
       <button
         aria-controls={controls}
         aria-expanded="true"
@@ -12,7 +14,7 @@ const CloseButton = ({ closeClickHandler, controls }) => {
         Close Window
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default CloseButton
+export default CloseButton;

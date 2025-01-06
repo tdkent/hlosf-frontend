@@ -1,15 +1,15 @@
-import React, { useEffect } from "react"
-import { FaLandmark } from "react-icons/fa"
+import React, { useEffect } from 'react';
+import { FaLandmark } from 'react-icons/fa';
 
-import LandmarkLink from "./LandmarkLink"
+import LandmarkLink from './LandmarkLink';
 
 const LandmarksList = ({ sortedData, windowWidth, scrollId }) => {
   useEffect(() => {
     if (scrollId) {
-      const element = document.getElementById(scrollId)
-      element.scrollIntoView({ behavior: "auto", block: "start" })
-    } else return
-  })
+      const element = document.getElementById(scrollId);
+      element.scrollIntoView({ behavior: 'auto', block: 'start' });
+    } else return;
+  });
   return (
     <div className="grid grid-cols-1 mt-4 mx-2">
       {sortedData.map((lm) => {
@@ -23,25 +23,30 @@ const LandmarksList = ({ sortedData, windowWidth, scrollId }) => {
                 {windowWidth <= 320
                   ? lm.title_stub
                   : windowWidth >= 1280
-                  ? lm.title
-                  : lm.title_short}
+                    ? lm.title
+                    : lm.title_short}
               </h4>
               <div className="font-light text-sm md:text-base my-1">
                 <ul className="flex flex-row items-center">
                   <li className="px-1 py-0.5 flex flex-row items-center">
                     <FaLandmark className="mr-1.5 fill-slate-500 " />
-                    {lm.number.toString().includes('.') ? lm.number.toString().replace('.', '-') : lm.number}
+                    {lm.number.toString().includes('.')
+                      ? lm.number.toString().replace('.', '-')
+                      : lm.number}
                   </li>
                   <li className="py-0.5 px-1 mx-4 italic">Group {lm.group}</li>
                 </ul>
               </div>
             </div>
-            <LandmarkLink id={lm.id} slug={lm.slug} />
+            <LandmarkLink
+              id={lm.id}
+              slug={lm.slug}
+            />
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default LandmarksList
+export default LandmarksList;

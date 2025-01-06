@@ -1,9 +1,9 @@
-import React from "react"
-import Image from "next/image"
-import Link from "next/link"
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { cloudinaryUrl, cloudinaryFolder } from "../../config/config"
-import ImageAttribution from "./ImageAttribution"
+import { cloudinaryUrl, cloudinaryFolder } from '../../config/config';
+import ImageAttribution from './ImageAttribution';
 
 const SingleLandmarkImages = ({ imgUrls, title, lmNum }) => {
   return (
@@ -11,15 +11,15 @@ const SingleLandmarkImages = ({ imgUrls, title, lmNum }) => {
       <h3 className="mb-2 text-lg font-medium">Images</h3>
       {imgUrls.map((url) => {
         return (
-          <div key={url.split("hlsf")[1]}>
+          <div key={url.split('hlsf')[1]}>
             <Link
               href={`${cloudinaryUrl}/q_100${cloudinaryFolder}${
-                url.split("hlsf")[1]
+                url.split('hlsf')[1]
               }`}>
               <Image
                 className="my-4 shadow-md shadow-slate-400 rounded-lg w-[600px]"
                 src={`${cloudinaryUrl}/q_70${cloudinaryFolder}${
-                  url.split("hlsf")[1]
+                  url.split('hlsf')[1]
                 }`}
                 alt={title}
                 width={990}
@@ -27,11 +27,11 @@ const SingleLandmarkImages = ({ imgUrls, title, lmNum }) => {
               />
             </Link>
           </div>
-        )
+        );
       })}
       <ImageAttribution lmNum={lmNum} />
     </div>
-  )
-}
+  );
+};
 
-export default SingleLandmarkImages
+export default SingleLandmarkImages;

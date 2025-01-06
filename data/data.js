@@ -1,4 +1,4 @@
-import landmarkData from "./data.json";
+import landmarkData from './data.json';
 
 export const allLandmarksReducedData = landmarkData.data.map((lm) => {
   return {
