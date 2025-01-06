@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BiCaretRight, BiCaretDown } from 'react-icons/bi';
-import { FaWindowClose } from 'react-icons/fa';
 import CloseButton from '../ui/CloseButton';
 
 const SiteNote = () => {

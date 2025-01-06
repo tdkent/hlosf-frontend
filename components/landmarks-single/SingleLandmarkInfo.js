@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { FaLandmark } from 'react-icons/fa';
 import { GrMapLocation } from 'react-icons/gr';
 
