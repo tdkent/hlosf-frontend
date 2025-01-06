@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 import Hyperlink from '../ui/Hyperlink';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Hyperlink = ({ href, fontWeight, linkTrans, handleClick, children }) => {
+const Hyperlink = ({ href, fontWeight, handleClick, children }) => {
   return (
     <Link
       href={href}
