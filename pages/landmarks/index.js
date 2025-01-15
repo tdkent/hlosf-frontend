@@ -51,6 +51,7 @@ const LandmarksPage = () => {
   }, []);
   return (
     <Layout title="Landmarks Index | Historical Landmarks of San Francisco">
+      <h1 className="pl-3 pr-5 text-2xl font-medium">Index of Landmarks</h1>
       <LandmarksSort
         sortMethod={sortMethod}
         setSortMethod={setSortMethod}

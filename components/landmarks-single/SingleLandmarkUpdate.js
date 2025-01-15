@@ -9,7 +9,7 @@ const SingleLandmarkUpdate = ({ updateText }) => {
   };
   return (
     <>
-      <h3 className="mb-2 text-lg font-medium">Update (2020)</h3>
+      <h2 className="mb-2 text-lg font-medium">Update (2020)</h2>
       <div
         className={styles.desc}
         dangerouslySetInnerHTML={createUpdateMarkup()}

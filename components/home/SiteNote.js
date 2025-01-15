@@ -1,30 +1,11 @@
-import React, { useState } from 'react';
-import { BiCaretRight, BiCaretDown } from 'react-icons/bi';
-import CloseButton from '../ui/CloseButton';
-
 const SiteNote = () => {
-  const [showNote, setShowNote] = useState(false);
-  const handleClick = (e) => {
-    e.preventDefault();
-    setShowNote((prev) => !prev);
-  };
   return (
-    <aside className={showNote ? 'mb-4' : undefined}>
-      <div className="flex flex-row items-center ml-1 xl:ml-16 mb-3 mt-4 md:text-lg">
-        {!showNote ? <BiCaretRight /> : <BiCaretDown />}
-        <input
-          type="button"
-          onClick={handleClick}
-          value="A note on the content"
-          aria-controls="content-note"
-          aria-expanded={showNote}
-          className="hover:cursor-pointer"
-        />
-      </div>
-      {showNote && (
+    <aside className="pl-2 pr-6 my-8">
+      <details>
+        <summary>A note on the content</summary>
         <div
           id="content-note"
-          className="m-2 xl:my-2 xl:mx-16 pl-3 pr-6 pb-3 bg-slate-50 border rounded-lg">
+          className="m-2 xl:my-2 pl-3 pr-6 pb-3 bg-slate-50 border rounded-lg">
           <p className="font-light mt-2">
             Much of the content on this site was created in 1976, and the text
             herein often refers to that year. This material was intended to be
@@ -42,12 +23,8 @@ const SiteNote = () => {
           </p>
           <p className="font-light mt-2">Enjoy!</p>
           <p className="font-normal mt-2">Douglas Kent</p>
-          <CloseButton
-            controls="content-note"
-            closeClickHandler={handleClick}
-          />
         </div>
-      )}
+      </details>
     </aside>
   );
 };

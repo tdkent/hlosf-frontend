@@ -5,14 +5,14 @@ import { cloudinaryUrl, cloudinaryFolder } from '../../config/config';
 
 const SiteImage = () => {
   return (
-    <div className="my-2 px-2">
+    <div className="relative my-4 lg:my-10 mx-auto w-full aspect-[3/2]">
       <Image
-        className="mx-auto shadow-md shadow-slate-400 rounded-lg w-[900px]"
+        className="mx-auto shadow-sm shadow-slate-400 rounded-lg object-cover"
         src={`${cloudinaryUrl}/q_80${cloudinaryFolder}/lm841-conservatory/Conservatory-site-2_uykjmg.jpg`}
         alt="The Conservatory of Flowers, San Francisco"
-        height={660}
-        width={990}
-        priority={true}
+        fill
+        priority
+        sizes="(max-width: 900px) 100vw, 900px"
       />
     </div>
   );

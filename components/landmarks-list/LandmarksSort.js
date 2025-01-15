@@ -10,8 +10,8 @@ const LandmarksSort = ({ sortMethod, setSortMethod, setScrollId }) => {
   return (
     <div
       id="landmark-sort"
-      className="mt-4 mb-2">
-      <form className="flex items-center justify-center">
+      className="my-8 pl-3">
+      <form className="flex items-center">
         <label htmlFor="sort">Sort by:</label>
         <select
           id="sort"

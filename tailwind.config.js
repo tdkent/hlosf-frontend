@@ -8,8 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern':
-          "url('https://res.cloudinary.com/do28aglgy/image/upload/v1670286082/hlsf/us-mint-logo_qig2cs.jpg')",
+        'hero-pattern': "url('/us-mint-bg.webp')",
       },
     },
     fontFamily: {

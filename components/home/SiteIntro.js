@@ -5,8 +5,10 @@ import Hyperlink from '../ui/Hyperlink';
 
 const SiteIntro = () => {
   return (
-    <div className="pl-3 pr-5 xl:pl-16 xl:pr-20 font-light">
-      <h2 className="text-2xl font-medium">Welcome</h2>
+    <div className="pl-2 pr-6 font-light">
+      <h1 className="my-6 text-xl sm:text-2xl font-medium">
+        Welcome to the historic landmarks of San Francisco
+      </h1>
       <p className="text-lg mt-2">
         For San Francisco 1976 is a twin bicentennial, the anniversary of the
         founding of both the Nation and the City.

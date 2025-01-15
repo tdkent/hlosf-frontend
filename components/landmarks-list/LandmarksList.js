@@ -19,17 +19,17 @@ const LandmarksList = ({ sortedData, windowWidth, scrollId }) => {
             id={lm.id}
             className="flex flex-row items-center justify-between py-2 border-b first:border-t last:border-none scroll-mt-[60px]">
             <div className="md:ml-4 xl:ml-0">
-              <h4 className="text-sm md:text-base mb-1">
+              <h2 className="text-sm md:text-base mb-1">
                 {windowWidth <= 320
                   ? lm.title_stub
                   : windowWidth >= 1280
                     ? lm.title
                     : lm.title_short}
-              </h4>
+              </h2>
               <div className="font-light text-sm md:text-base my-1">
                 <ul className="flex flex-row items-center">
                   <li className="px-1 py-0.5 flex flex-row items-center">
-                    <FaLandmark className="mr-1.5 fill-slate-500 " />
+                    <FaLandmark className="mr-1.5 fill-slate-600 " />
                     {lm.number.toString().includes('.')
                       ? lm.number.toString().replace('.', '-')
                       : lm.number}

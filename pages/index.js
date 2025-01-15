@@ -13,7 +13,7 @@ export default function HomePage() {
   }, []);
   return (
     <Layout title="Home Page | Historical Landmarks of San Francisco">
-      <article className="my-8">
+      <article>
         <SiteImage />
         <SiteNote />
         <SiteIntro />

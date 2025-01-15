@@ -8,7 +8,7 @@ import ImageAttribution from './ImageAttribution';
 const SingleLandmarkImages = ({ imgUrls, title, lmNum }) => {
   return (
     <div>
-      <h3 className="mb-2 text-lg font-medium">Images</h3>
+      <h2 className="mb-2 text-lg font-medium">Images</h2>
       {imgUrls.map((url) => {
         return (
           <div key={url.split('hlsf')[1]}>

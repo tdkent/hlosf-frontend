@@ -21,10 +21,12 @@ const SingleLandmarkInfo = ({ data }) => {
         />
       )}
       <div className="flex items-center justify-center">
-        <FaLandmark className="mr-2 fill-sky-400" />
-        <h4 className="text-sky-400">{data.number}</h4>
+        <FaLandmark className="mr-2 fill-slate-600" />
+        <p className="text-slate-600">{data.number}</p>
       </div>
-      <h2 className="mt-1 mb-4 px-2 text-2xl text-center">{data.title}</h2>
+      <h1 className="my-4 px-2 text-xl sm:text-2xl text-center">
+        {data.title}
+      </h1>
       <div className="my-2 mx-auto py-2 border-y text-center">
         <ul className="font-light text-sm md:text-base">
           <li className="my-1 italic">Group {data.group}</li>
