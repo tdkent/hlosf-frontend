@@ -1,8 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { cloudinaryUrl, cloudinaryFolder } from '../../config/config';
-
 const Logo = () => {
   return (
     <div className="flex flex-col items-center justify-center h-[100px] xl:h-[130px] 2xl:h-[160px] bg-hero-pattern bg-no-repeat bg-cover bg-center">
@@ -12,8 +10,8 @@ const Logo = () => {
       </h1>
       <Image
         className="absolute h-[80px] w-[80px] top-[10px] xl:h-[110px] xl:w-[110px] 2xl:h-[140px] 2xl:w-[140px] rounded-full z-5 shadow shadow-black"
-        src={`${cloudinaryUrl}${cloudinaryFolder}/hlsf-logo-mint_j1bivg.jpg`}
-        alt={'State Historic Marker'}
+        src={'/us-mint-fg.webp'}
+        alt={'Exterior of the US Mint building'}
         width={330}
         height={220}
       />
