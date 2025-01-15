@@ -21,8 +21,8 @@ const SingleLandmarkInfo = ({ data }) => {
         />
       )}
       <div className="flex items-center justify-center">
-        <FaLandmark className="mr-2 fill-sky-400" />
-        <p className="text-sky-400">{data.number}</p>
+        <FaLandmark className="mr-2 fill-slate-600" />
+        <p className="text-slate-600">{data.number}</p>
       </div>
       <h1 className="my-4 px-2 text-xl sm:text-2xl text-center">
         {data.title}
