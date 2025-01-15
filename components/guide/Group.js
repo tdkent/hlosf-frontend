@@ -18,7 +18,7 @@ const Group = (props) => {
         />
       )}
       <div className="mt-4 pb-4 pl-3 pr-5 border-t">
-        <h2 className="text-lg font-medium mt-6">Group {props.num}</h2>
+        <h3 className="text-lg font-medium mt-6">Group {props.num}</h3>
         <div>
           <ol>
             {props.data

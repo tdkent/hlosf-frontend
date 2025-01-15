@@ -14,14 +14,14 @@ const MapModalContent = (props) => {
       aria-labelledby="landmark-name"
       className="fixed top-4 min-[375px]:top-16 md:top-20 w-full xl:w-4/5 xl:left-[10%] 2xl:w-1/2 2xl:left-[25%] 2xl:top-32 bg-white z-50 rounded-lg">
       <div className="py-1">
-        <h4
+        <h2
           id="landmark-name"
           className="px-2 flex items-center justify-center">
           Map:{' '}
           {!props.data.length
             ? `${props.data.title_stub} (${props.data.number})`
             : `Group ${props.num}`}
-        </h4>
+        </h2>
       </div>
       {!props.data.length ? (
         <SingleLandmarkMap {...props} />

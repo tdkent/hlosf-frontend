@@ -22,9 +22,9 @@ const Guide = () => {
   }, []);
   return (
     <Layout title="Sightseeing Guide | Historical Landmarks of San Francisco">
-      <div className="my-4 font-light">
+      <div className="font-light">
         <div className="pl-3 pr-5">
-          <h2 className="text-2xl font-medium">Sightseeing Guide</h2>
+          <h1 className="text-2xl font-medium">Sightseeing Guide</h1>
           <p className="mt-2">
             By consulting the text and accompanying maps, you should have no
             trouble locating and visiting all of the City&#39;s 48 State
@@ -32,7 +32,7 @@ const Guide = () => {
           </p>
         </div>
         <div className="my-6">
-          <h3 className="mb-2 pl-3 text-xl font-medium">Map: All Landmarks</h3>
+          <h2 className="mb-2 pl-3 text-xl font-medium">Map: All Landmarks</h2>
           <p className="pl-3 pr-5 mb-2">
             This map shows the locations of all 48 historical landmarks in San
             Francisco county, with group numbers indicated. Click a marker to
@@ -43,7 +43,7 @@ const Guide = () => {
           </div>
         </div>
         <div>
-          <h3 className="mb-2 pl-3 text-xl font-medium">Groups</h3>
+          <h2 className="mb-2 pl-3 text-xl font-medium">Groups</h2>
           <p className="pl-3 pr-5">
             For your convenience, the landmarks have been placed in five
             geographical groups with a suggested sequence for seeing the sites.

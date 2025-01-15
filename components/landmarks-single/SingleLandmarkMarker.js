@@ -7,8 +7,8 @@ const SingleLandmarkMarker = ({ markerText, markerOnSite, markerYear }) => {
   };
   return (
     <>
-      <h3 className="mb-2 text-lg font-medium">Plaque</h3>
-      <h5 className="text-sm font-normal">Inscription</h5>
+      <h2 className="mb-2 text-lg font-medium">Plaque</h2>
+      <h3 className="mt-6 mb-2 font-medium">Inscription</h3>
       <div
         className="mb-4 italic"
         dangerouslySetInnerHTML={createMarkerMarkup()}
@@ -23,7 +23,7 @@ const SingleLandmarkMarker = ({ markerText, markerOnSite, markerYear }) => {
       )}
       {markerYear && (
         <>
-          <h5 className="text-sm font-normal">Year Dedicated</h5>
+          <h3 className="mt-6 mb-2 font-medium">Year Dedicated</h3>
           <p className="mb-4 italic">{markerYear}</p>
         </>
       )}

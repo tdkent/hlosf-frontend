@@ -24,7 +24,9 @@ const Layout = ({ title, description, children }) => {
       <Header />
       <NavBar />
       <div className="main-container">
-        <main className="w-full mx-auto px-2 max-w-[900px]">{children}</main>
+        <main className="w-full mx-auto my-12 px-2 max-w-[900px]">
+          {children}
+        </main>
       </div>
       <Footer />
     </>
