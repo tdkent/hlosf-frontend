@@ -10,7 +10,7 @@ const SiteNote = () => {
   };
   return (
     <aside className={showNote ? 'mb-4' : undefined}>
-      <div className="flex flex-row items-center ml-1 xl:ml-16 mb-3 mt-4 md:text-lg">
+      <div className="flex flex-row items-center ml-1 mb-3 mt-4 md:text-lg">
         {!showNote ? <BiCaretRight /> : <BiCaretDown />}
         <input
           type="button"
@@ -24,7 +24,7 @@ const SiteNote = () => {
       {showNote && (
         <div
           id="content-note"
-          className="m-2 xl:my-2 xl:mx-16 pl-3 pr-6 pb-3 bg-slate-50 border rounded-lg">
+          className="m-2 xl:my-2 pl-3 pr-6 pb-3 bg-slate-50 border rounded-lg">
           <p className="font-light mt-2">
             Much of the content on this site was created in 1976, and the text
             herein often refers to that year. This material was intended to be
