@@ -37,11 +37,6 @@ const Layout = ({ title, description, children }) => {
         />
         <title>{title}</title>
       </Head>
-      <Script
-        id="google-fonts"
-        strategy="lazyOnload"
-        src="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Work+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,500;1,600&display=swap"
-      />
       <div id="backdrop-hook"></div>
       <div id="modal-hook"></div>
       <Header />
