@@ -15,6 +15,7 @@ const Logo = () => {
         width={330}
         height={220}
         sizes="(max-width: 1024px) 80px, (max-width: 1536px) 110px, 140px"
+        priority
       />
     </div>
   );
