@@ -33,3 +33,4 @@ The site was developed in November-December 2022. It was one of my first project
 - [react-icons](https://react-icons.github.io/react-icons/)
 
 ## Views
+![hlosf-mobile-views](https://github.com/user-attachments/assets/9b7a4055-c74e-409b-9f27-05442e9b2698)
