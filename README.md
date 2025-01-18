@@ -4,7 +4,7 @@
 
 [HLOSF.com](https://www.hlosf.com/) is a content-driven website about the officially designated historical landmarks of California that are located in the city and county of San Francisco.
 
-The site was developed in November-December 2022. It was one of my first projects after graduating from Fullstack Academy in August 2022, and the first app I developed with [Next.js](https://nextjs.org/).
+The site was developed in November-December 2022. It was one of my first projects after graduating from Fullstack Academy in August 2022, and the first app I developed with Next.js.
 
 ## Features
 
@@ -18,18 +18,11 @@ The site was developed in November-December 2022. It was one of my first project
 
 ## Built with
 
-#### Major Dependencies
-
 - JavaScript
 - [React 18](https://react.dev/)
 - [Next.js 14](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [@googlemaps/js-api-loader](https://www.npmjs.com/package/@googlemaps/js-api-loader)
-
-#### Other Technologies
-
-- ESLint
-- [Prettier](https://prettier.io/)
 - [react-icons](https://react-icons.github.io/react-icons/)
 
 ## Views
